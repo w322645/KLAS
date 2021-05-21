@@ -28,6 +28,5 @@ module.exports = client => {
     client.user.setActivity(oyun[random], "");
   }, 2 * 2500);
 
-client.channels.cache.get(`811078963555467324`).join()
 
 };
