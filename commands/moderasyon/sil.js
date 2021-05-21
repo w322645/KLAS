@@ -3,7 +3,7 @@ const talkedRecently = new Set();
 
 exports.run = function(client, message, args) {
    if (talkedRecently.has(message.author.id)) {
-           return message.channel.send(new Discord.MessageEmbed().setColor('#36393f').setTitle('UYARI !').setDescription(`\`5\` Saniye de Bir Kullanabilirsin - <@! + message.author.id`);
+           return message.channel.send(new Discord.MessageEmbed().setColor('#36393f').setTitle('UYARI !').setDescription(`\`5\` Saniye de Bir Kullanabilirsin - <@!${message.author.id}>`));
     } else {
 
            // the user can type the command ... your command code goes here :)
