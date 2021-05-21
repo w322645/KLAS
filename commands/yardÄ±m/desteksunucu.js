@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const db = require("quick.db");
 
 exports.run = async (client, message, args) => {
+
   if(!message.guild){
     var prefix = "?";
   } else {
@@ -20,6 +21,7 @@ exports.run = async (client, message, args) => {
     .setDescription(
       "__**» BOTUN DESTEK SUNUCUSUNA GİTMEK İÇİN:**__\n\n <a:UrlGif:820284492509347931> **https://www.efdabot.ml/** <a:UrlGif:820284492509347931>\n\n\n\n```fix\n BENİM SAHİBİM EFE SUALP SÖZÜGERÇEK\n``` "
     )
+  
     .setImage("https://s4.gifyu.com/images/standard-66beeee769d8ffbeb.gif");
   message.channel.send(desteklann);
 };
