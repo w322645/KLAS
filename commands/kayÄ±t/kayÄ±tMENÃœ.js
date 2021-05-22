@@ -15,7 +15,7 @@ exports.run = async (client, message, args) => {
     .setAuthor("🔥 EF&DA'in Kayıt Sistemi hoşgeldin! 🔥")
     .setTitle(`:gem: Prefix \`${prefix}\` Kayıt Menü EFDA`)
     .setTimestamp()
-    .setThumbnail("https://media.giphy.com/media/VVl0KCdvZe9ORF1Ywc/giphy.gif")
+    .setThumbnail("https://cdn.glitch.com/478cc1e8-9c56-49a4-b910-3247fb1894aa%2Fezgif.com-gif-maker-6c3ab6491a5e480d7.gif?v=1621708715117")
     .setImage("https://cdn.glitch.com/478cc1e8-9c56-49a4-b910-3247fb1894aa%2Fkay%C4%B1t%20men%C3%BC.png?v=1621708549389")
     .setDescription(
       //Tamam yap ama en son kısmı yapma orası başka ben ayarlarım

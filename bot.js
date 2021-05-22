@@ -87,7 +87,7 @@ client.on("message", message => {
     .addField(" Sahibim;", "<:okeys:820285379298328607> <@!275926652842934272>")
   .addField(" Web Sitem;", "<:okeys:820285379298328607> [Burdan Gidebilirsiniz](https://www.efdabot.ml)")//TAM AGA SAKİN SİKCEKMİŞ GİBİ BAĞIRIYON ASOIDHJAOISHDJFASFO
     .setFooter(client.user.username)
-    .setThumbnail("https://media.giphy.com/media/VVl0KCdvZe9ORF1Ywc/giphy.gif");
+    .setThumbnail("https://cdn.glitch.com/478cc1e8-9c56-49a4-b910-3247fb1894aa%2Fezgif.com-gif-maker-6c3ab6491a5e480d7.gif?v=1621708715117");
   if (message.content === `<@!${client.user.id}>` || message.content === `<@${client.user.id}>`)
     return message.channel.send(embed); //
 });
