@@ -15,6 +15,7 @@ exports.run = async (client, message, args) => {
       .setAuthor("🔥 EF&DA'in YETKİLİ (2) Menüsüne hoşgeldin! 🔥")
     .setTitle(`:gem: EF&DA'in Yetkili Menüye hoşgeldin! Prefix \`${prefix}\``)
     .setTimestamp()
+  .setImage('https://cdn.glitch.com/478cc1e8-9c56-49a4-b910-3247fb1894aa%2Fyetk%C4%B1l%C4%B1.png?v=1621708531738')
     .setDescription(
       `> **» ${prefix}duyuru** : Yazılan Yerde Duyuru Yapar.\n> **» ${prefix}sunucu-kur** : Çok Yönlü Efsane Otomatik Sunucu Kurar.\n> **» ${prefix}isim-değiştir** : Etiketlenen Kişinin İsmini Sizin Yazdığınızla Değiştirir.\n> **» ${prefix}roller** : Sunucudaki Kaç Rol Olduğunu Ve Rolleri Atar.\n> **» ${prefix}kanal-res** : Yazılan Kanala Restart Atar.\n> **» ${prefix}modlog** : Silinen Mesajlar Düzenlenen Mesajları Belirttiğiniz Kanala Yollar .\n> **» ${prefix}rol-oluştur** : Size Belirttiğiniz Ad da ve renk de Rol Oluşturur .\n> **» ${prefix}kick** : Bot Etiketlediğiniz Kişi Kickler.\n> **» ${prefix}unban** : Bot Banlanan Bir Kişinin Banını Açmasını Sağlar.\n> **» ${prefix}ban** : Bot Etiketlediğiniz Kişiyi Onaylama Şeklinde Banlama Sunar.\n> **» ${prefix}sil** : Bot Berillediğiniz kadar mesaj siler.\n> **» ${prefix}banlist** : Bot O Sunucuda Yasaklanan Kişileri Gösterir.\n> **» ${prefix}otoisim** : Bot Sunucuya Girenlere Yazdığınız Oto isim Verir.`
     );

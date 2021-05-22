@@ -22,7 +22,7 @@ exports.run = async (client, message, args) => {
       "__**» BOTUN DESTEK SUNUCUSUNA GİTMEK İÇİN:**__\n\n <a:UrlGif:820284492509347931> **https://www.efdabot.ml/** <a:UrlGif:820284492509347931>\n\n\n\n```fix\n BENİM SAHİBİM EFE SUALP SÖZÜGERÇEK\n``` "
     )
   
-    .setImage("https://s4.gifyu.com/images/standard-66beeee769d8ffbeb.gif");
+    .setImage("https://cdn.glitch.com/478cc1e8-9c56-49a4-b910-3247fb1894aa%2FEFDA%20DESTEK.png?v=1621708553406");
   message.channel.send(desteklann);
 };
 

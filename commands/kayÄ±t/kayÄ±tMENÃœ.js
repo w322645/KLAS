@@ -16,7 +16,7 @@ exports.run = async (client, message, args) => {
     .setTitle(`:gem: Prefix \`${prefix}\` Kayıt Menü EFDA`)
     .setTimestamp()
     .setThumbnail("https://media.giphy.com/media/VVl0KCdvZe9ORF1Ywc/giphy.gif")
-    .setImage("https://media.giphy.com/media/ol2wV4mMXZ8XyGwPDf/giphy.gif")
+    .setImage("https://cdn.glitch.com/478cc1e8-9c56-49a4-b910-3247fb1894aa%2Fkay%C4%B1t%20men%C3%BC.png?v=1621708549389")
     .setDescription(
       //Tamam yap ama en son kısmı yapma orası başka ben ayarlarım
       `> **»HG BB İstiyorsanız (${prefix}hg-bb : Den Ayarlayabilirsiniz)**\n\n> **» ${prefix}kayıt-yetkili** : Hangi Rolün Kayıt Yapabilceğini Belirlersiniz.\n> **» ${prefix}alınacak-rol** : Kayıt Sız Rolünü Ayarlarsınız Etiketlemeniz Gerekmektedir.\n> **» ${prefix}erkek-rol** : Erkek Rolünü Ayarlarsınız Etiketlemeniz Gerekmektedir.\n> **» ${prefix}kayıt-tag** : Kayıt Edilen Kişilerin Başınıza Belirtilen Tagı Ekler.\n> **» ${prefix}kız-rol** : kız Rolünü Ayarlarsınız Etiketlemeniz Gerekmektedir.\n> **» ${prefix}kayıt-kanal #kanal** : Kayıtın Yapılıcağı Kanalı Belirlersiniz.\n> **» ${prefix}kayıt-log #kanal** : Kayıt Yapıldığında Log Atıcak Kanalı Belirlersiniz.\n> **» ${prefix}kayıt-sıfırla** : Kayıt Sistemini Sıfırlarsınız.\n`

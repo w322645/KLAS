@@ -12,6 +12,7 @@ exports.run = async (client, message, args) => {
   };
   const yetkiliamq = new Discord.MessageEmbed()
     .setColor("#36393f")
+  .setImage('https://cdn.glitch.com/478cc1e8-9c56-49a4-b910-3247fb1894aa%2Fyetk%C4%B1l%C4%B1.png?v=1621708531738')
       .setAuthor("🔥 EF&DA'in YETKİLİ Menüsüne hoşgeldin! 🔥")
     .setTitle(`:gem: EF&DA'in Yetkili Menüye hoşgeldin! Prefix \`${prefix}\``)
     .setTimestamp()

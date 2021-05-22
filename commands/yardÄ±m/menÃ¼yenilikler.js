@@ -11,7 +11,7 @@ exports.run = async (client, message, args) => {
   }
   };
   const yenilikler = new Discord.MessageEmbed()
-    .setImage("https://s4.gifyu.com/images/standard-5024c3fec90018333.gif")
+    .setImage("https://cdn.glitch.com/478cc1e8-9c56-49a4-b910-3247fb1894aa%2Fyeni2.png?v=1621708534311")
     .setColor("#36393f")
     .setTitle(
       `<:menu:820288234772889630> Prefix \`${prefix}\` Yenilikler EFDA <:bult:820288713493708841>`
