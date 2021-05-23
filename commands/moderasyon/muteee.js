@@ -2,9 +2,9 @@ const Discord = require("discord.js");
 const qdb = require("quick.db");
 const ms = require("ms");
 const ayarlar = require("../../config.json");
-
-exports.run = async (client, message, args) => {
   const talkedRecently = new Set();
+exports.run = async (client, message, args) => {
+
 
  if (talkedRecently.has(message.author.id)) {
            return message.channel.send(new Discord.MessageEmbed().setColor('#36393f').setTitle('UYARI !').setDescription(`\`5\` Saniye de Bir Kullanabilirsin - <@!${message.author.id}>`))

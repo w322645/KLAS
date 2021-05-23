@@ -1,7 +1,7 @@
 const { MessageEmbed } = require("discord.js");
-
+const talkedRecently = new Set();
 module.exports.run = async (bot, message, args) => {
-  const talkedRecently = new Set();
+
 
  if (talkedRecently.has(message.author.id)) {
            return message.channel.send(new MessageEmbed().setColor('#36393f').setTitle('UYARI !').setDescription(`\`5\` Saniye de Bir Kullanabilirsin - <@!${message.author.id}>`))

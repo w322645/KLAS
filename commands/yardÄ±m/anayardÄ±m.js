@@ -45,7 +45,7 @@ exports.run = async (client, message, args) => {
     .setDescription(
       `\`\`\`bash\n"EFDA Menüler"\n\`\`\`\`\`\`asciidoc\n[Prefixi Değiştirmek için ${prefix}prefix]\n\`\`\`\n\`${prefix}yenilikler : Yenilikler Menüsüne Gidersiniz\`  \`${prefix}efday\`\n\n\`${prefix}destek-sunucu : Destek Sunucusuna gidersiniz\`  \`${prefix}d\`\n\n\`${prefix}kayıt-menü : Kayıt Menüsüne Gidersiniz\`  \`${prefix}kayıtm\`\n\n\`${prefix}yetkili : Yetkili Menüsüne Gidersiniz\`  \`${prefix}y\`\n\n\`${prefix}yetkili2 : Yetkili (2) Menüsüne Gidersiniz\`  \`${prefix}y2\`\n\n\`${prefix}logo : Logo Menüye Gidersiniz\`  \`${prefix}lg\`\n\n\`${prefix}menü : Menüye Gidersiniz\`  \`${prefix}m\`\n\n\`${prefix}menü2 : 2. Menüye Gidersiniz\`  \`${prefix}m2\`\n\n\`${prefix}menü3 : 3. Menüye Gidersiniz\`  \`${prefix}m3\`\n\n**🍭SORUN KOMUTLARI**\`\`\`fix\n${prefix}bugbildir : Bot daki Bugları Bildirmenize Yarar\n\n${prefix}şikayet : Botu Şikayet Etmenize Yarar\`\`\``
     )
-    .setImage("https://media.giphy.com/media/1kIASFJWJ5jjBkzbvo/giphy.gif");
+    .setImage("https://cdn.glitch.com/478cc1e8-9c56-49a4-b910-3247fb1894aa%2Fyeni2.png?v=1621792931950");
   message.channel.send(sgmk);
 };
 

@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 
 exports.run = async (client, message, args) => {
-  
   const yazi = args.slice(0).join("+");
 
   if (!yazi)

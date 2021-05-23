@@ -2,9 +2,9 @@ const discord = require("discord.js");
 const Database = require("plasma-db");
 const db = new Database("./database.json");
 const qdb = require("quick.db");
-
-exports.run = async (client, message, args) => {
   const talkedRecently = new Set();
+exports.run = async (client, message, args) => {
+ 
 
  if (talkedRecently.has(message.author.id)) {
            return message.channel.send(new discord.MessageEmbed().setColor('#36393f').setTitle('UYARI !').setDescription(`\`5\` Saniye de Bir Kullanabilirsin - <@!${message.author.id}>`))

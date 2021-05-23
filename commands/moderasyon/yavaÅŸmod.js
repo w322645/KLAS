@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 const qdb = require('quick.db');
-
-exports.run = (client, msg, args) => {
   const talkedRecently = new Set();
+exports.run = (client, msg, args) => {
+
 
  if (talkedRecently.has(msg.author.id)) {
            return msg.channel.send(new Discord.MessageEmbed().setColor('#36393f').setTitle('UYARI !').setDescription(`\`5\` Saniye de Bir Kullanabilirsin - <@!${msg.author.id}>`))
