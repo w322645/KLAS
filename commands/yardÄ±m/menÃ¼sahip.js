@@ -2,30 +2,25 @@ const Discord = require("discord.js");
 const db = require("quick.db");
 
 exports.run = async (client, message, args) => {
+  const talkedRecently = new Set();
+
+ if (talkedRecently.has(message.author.id)) {
+           return message.channel.send(new Discord.MessageEmbed().setColor('#36393f').setTitle('UYARI !').setDescription(`\`5\` Saniye de Bir Kullanabilirsin - <@!${message.author.id}>`))
+     .then(x => {x.delete({timeout: 3000})})
+    } else {
+
+           // the user can type the command ... your command code goes here :)
+
+        // Adds the user to the set so that they can't talk for a minute
+        talkedRecently.add(message.author.id);
+        setTimeout(() => {
+        message.delete();
+          // Removes the user from the set after a minute
+          talkedRecently.delete(message.author.id);
+        }, 5000);// Şuan 5 Saniyedir Değiştirebilirsiniz.
+    }
   if(!message.author.id === "758672982146809867") return message.reply("bunu sadece sahibim kullanabilir")
-  if (message.content === '?sahip') {
-    message.react('808795266609446913'); // buraya istediğiniz emojinin ID'sini girin
-}if (message.content === '?sahip') {
-    message.react('808795288315625513'); // buraya istediğiniz emojinin ID'sini girin
-}if (message.content === '?sahip') {
-    message.react('808795252446068787'); // buraya istediğiniz emojinin ID'sini girin
-}if (message.content === '?sahip') {
-    message.react('808561597483581461'); // buraya istediğiniz emojinin ID'sini girin
-}if (message.content === '?sahip') {
-    message.react('808795267394437141'); // buraya istediğiniz emojinin ID'sini girin
-}if (message.content === '?sahip') {
-    message.react('808795266341011538'); // buraya istediğiniz emojinin ID'sini girin
-}if (message.content === '?sahip') {
-    message.react('808795267586719824'); // buraya istediğiniz emojinin ID'sini girin
-}if (message.content === '?sahip') {
-    message.react('808561586821267468'); // buraya istediğiniz emojinin ID'sini girin
-}if (message.content === '?sahip') {
-    message.react('808561900543410187'); // buraya istediğiniz emojinin ID'sini girin
-}if (message.content === '?sahip') {
-    message.react('808795273315876885'); // buraya istediğiniz emojinin ID'sini girin
-}if (message.content === '?sahip') {
-    message.react('808795277623427133'); // buraya istediğiniz emojinin ID'sini girin
-}
+
   if(!message.guild){
     var prefix = "?";
   } else {

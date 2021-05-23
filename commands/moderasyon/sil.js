@@ -3,7 +3,8 @@ const talkedRecently = new Set();
 
 exports.run = function(client, message, args) {
    if (talkedRecently.has(message.author.id)) {
-           return message.channel.send(new Discord.MessageEmbed().setColor('#36393f').setTitle('UYARI !').setDescription(`\`5\` Saniye de Bir Kullanabilirsin - <@!${message.author.id}>`));
+           return message.channel.send(new Discord.MessageEmbed().setColor('#36393f').setTitle('UYARI !').setDescription(`\`5\` Saniye de Bir Kullanabilirsin - <@!${message.author.id}>`))
+     .then(x => {x.delete({timeout: 3000})})
     } else {
 
            // the user can type the command ... your command code goes here :)
@@ -17,10 +18,10 @@ exports.run = function(client, message, args) {
         }, 5000);// Şuan 5 Saniyedir Değiştirebilirsiniz.
     }
   const m = args.join(' ');
-  if(!m) return message.channel.send('**:gear: Bir miktar girmelisiniz!**');
-  if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('**:xx: Bu işlem için gerekli izne sahip değilsiniz!**');
-  if(m < 2) return message.channel.send(':gear: **En az 2 mesaj silebilirim!**')
- if(m>100) return message.channel.send('**:gear: En fazla 100 mesaj silebilirim!**')
+  if(!m) return message.channel.send('**:gear: Bir miktar girmelisiniz!**').then(x => {x.delete({timeout: 3000})});
+  if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('**:xx: Bu işlem için gerekli izne sahip değilsiniz!**').then(x => {x.delete({timeout: 3000})});
+  if(m < 2) return message.channel.send(':gear: **En az 2 mesaj silebilirim!**').then(x => {x.delete({timeout: 3000})})
+ if(m>100) return message.channel.send('**:gear: En fazla 100 mesaj silebilirim!**').then(x => {x.delete({timeout: 3000})})
   
   message.channel.bulkDelete(m);
 
