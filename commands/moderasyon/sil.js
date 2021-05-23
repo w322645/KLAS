@@ -31,9 +31,7 @@ exports.run = function(client, message, args) {
     .setDescription('**Başarı ile __'+m+'__ mesaj sildim! :gear:**')
   .setColor('0x36393E')
     
-  ).then(i=>{
-    i.react(':gear: 585186945471086620')
-  }
+  ).then(x => {x.delete({timeout: 3000})}
   )
   
 };
