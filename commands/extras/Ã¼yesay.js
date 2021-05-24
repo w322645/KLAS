@@ -9,7 +9,7 @@ exports.run = async (client, message, args) => {
   const say = new Discord.MessageEmbed()
     .setColor(message.guild.me.displayColor)
     .setTitle(message.guild.name)
-    .addField("<a:4257_lit:814532947381321748> Sunucudaki üye sayısı", message.guild.memberCount)
+    .addField("<a:ZilGif:814802772754301020> Sunucudaki üye sayısı", message.guild.memberCount)
     .addField(
       "<a:AyarGif:820286392647024741> Sunucudaki Bot Sayısı",
       message.guild.members.cache.filter(m => m.user.bot).size

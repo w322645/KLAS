@@ -7,12 +7,14 @@ exports.run = async (client, message, args) => {
         const hata = new Discord.MessageEmbed()
         .setDescription(`Bir ses kanalında olman gerekiyor.`)
         .setColor('#ff0000')
+        return message.channel.send(hata)
     }
 
     if (!kullanici.voice.channel) {
         const hata = new Discord.MessageEmbed()
         .setDescription(`Etiketlediğin kullanıcı herhangi bir ses kanalında gözükmüyor.`)
         .setColor('#ff0000')
+        return message.channel.send(hata)
     }
 
     if (!kullanici) {
