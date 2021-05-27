@@ -29,13 +29,10 @@ exports.run = async (client, message, args) => {
       return message.channel.send("Resimli giriş çıkış zaten ayarlanmamış.");
     }
   } else if (args[0] == "yardım") {
-    return message.channel.send(`
-    **${prefix}resimli-hgbb ayarla #kanal** => Resimli giriş çıkış kanalını ayarlar. 
-
-    **${prefix}resimli-hgbb sıfırla** => Resimli giriş çıkış kanalını sıfırlar.
-    
-    **${prefix}resimli-hgbb yardım** => Yardım menüsü. 
-    `);
+    return message.channel.send(new Discord.MessageEmbed().setThumbnail(client.user.displayAvatarURL({ size: 1024 })).setColor('#36393f').setTitle('Resimli Hg-bb Menü')
+    .addField(`${prefix}resimli-hgbb ayarla #kanal`,`Resimli giriş çıkış kanalını ayarlar. `)
+.addField(`${prefix}resimli-hgbb sıfırla`,`Resimli giriş çıkış kanalını sıfırlar. `)
+.addField(`${prefix}resimli-hgbb yardım`,`Yardım menüsü. `));
   } else
     return message.channel.send(
       `Lütfen bir seçenek belirtin! Eğer kullanımı bilmiyorsanız \`${prefix}resimli-hgbb yardım\``
