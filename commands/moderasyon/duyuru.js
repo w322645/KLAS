@@ -22,11 +22,11 @@ exports.run = (client, message, args) => {
 
     if (mesaj.length < 1) return message.reply('Yazmam İçin Birşey Yazmalısın!');
     message.delete();
-    message.channel.send('||@everyone||')
+    message.channel.send('||@everyone||').then(x => {x.delete({timeout: 3000})});
     const embed = new Discord.MessageEmbed()
     .setAuthor('')
  .setTitle('📣 DUYURU ! 📣')
-    .setColor('BLACK')
+    .setColor('BLUE')
     .setDescription(`${mesaj}`)
     return message.channel.send(embed);
 };
