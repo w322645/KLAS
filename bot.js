@@ -856,21 +856,21 @@ client.on('message', async message => {
     ctx.strokeStyle = '#74037b';
     ctx.strokeRect(0, 0, canvas.width, canvas.height);
     ctx.font = "bold 34px Arial";
-    ctx.fillStyle = "#000000"
+    ctx.fillStyle = "#1e90ff"
     ctx.textAlign = "center"
-    ctx.fillText(`${member.user.username}`, 325, 220);
+    ctx.fillText(`${member.user.username}`, 325, 270);
     ctx.font = "bold 48x Arial";
     ctx.fillStyle = "#FF0000";
     ctx.textAlign = "left";
     ctx.fillText(`#${member.guild.memberCount}`, 412.5, 75)
     
     ctx.beginPath();
-    ctx.arc(325, 100, 75, 0, Math.PI * 2);
+    ctx.arc(325, 150, 75, 0, Math.PI * 2);
     ctx.closePath();
     ctx.clip();
     
     const avatar = await Canvas.loadImage(member.user.displayAvatarURL({ format: 'jpg' }));
-    ctx.drawImage(avatar, 250, 25, 150, 150);
+    ctx.drawImage(avatar, 250, 75, 150, 150);
     const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'efda-giriş.png');
     kanalcık.send(`${member} sunucuya katıldı, **${guild.memberCount}** kişi olduk. Hoşgeldin **${member.user.tag}**!`,attachment)
   })
@@ -897,12 +897,12 @@ client.on('message', async message => {
     ctx.fillText(`#${member.guild.memberCount}`, 412.5, 75)
     
     ctx.beginPath();
-    ctx.arc(305, 100, 75, 0, Math.PI * 2);
+    ctx.arc(325, 150, 75, 0, Math.PI * 2);
     ctx.closePath();
     ctx.clip();
     
     const avatar = await Canvas.loadImage(member.user.displayAvatarURL({ format: 'jpg' }));
-    ctx.drawImage(avatar, 230, 25, 150, 150);
+    ctx.drawImage(avatar, 250, 75, 150, 150);
     const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'efda-giriş.png');
     kanalcık.send(`${member.user.tag} \`(ID => [${member.id}])\` sunucudan ayrıldı, **${guild.memberCount}** kişi olduk. Görüşürüz **${member.user.username}**!`,attachment)
   })
