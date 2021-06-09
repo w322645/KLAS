@@ -851,7 +851,7 @@ client.on('message', async message => {
     if(!kanalcık) return;
     const canvas = Canvas.createCanvas(648, 360);
     const ctx = canvas.getContext('2d');
-    const background = await Canvas.loadImage('/app/assets/giris.png');
+    const background = await Canvas.loadImage('/app/assets/ggg.png');
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
     ctx.strokeStyle = '#74037b';
     ctx.strokeRect(0, 0, canvas.width, canvas.height);
@@ -883,7 +883,7 @@ client.on('message', async message => {
     if(!kanalcık) return;
     const canvas = Canvas.createCanvas(648, 360);
     const ctx = canvas.getContext('2d');
-    const background = await Canvas.loadImage('/app/assets/cikis.png');
+    const background = await Canvas.loadImage('/app/assets/gngngrs.png');
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
     ctx.strokeStyle = '#74037b';
     ctx.strokeRect(0, 0, canvas.width, canvas.height);
@@ -897,12 +897,12 @@ client.on('message', async message => {
     ctx.fillText(`#${member.guild.memberCount}`, 412.5, 75)
     
     ctx.beginPath();
-    ctx.arc(325, 100, 75, 0, Math.PI * 2);
+    ctx.arc(305, 100, 75, 0, Math.PI * 2);
     ctx.closePath();
     ctx.clip();
     
     const avatar = await Canvas.loadImage(member.user.displayAvatarURL({ format: 'jpg' }));
-    ctx.drawImage(avatar, 250, 25, 150, 150);
+    ctx.drawImage(avatar, 230, 25, 150, 150);
     const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'efda-giriş.png');
     kanalcık.send(`${member.user.tag} \`(ID => [${member.id}])\` sunucudan ayrıldı, **${guild.memberCount}** kişi olduk. Görüşürüz **${member.user.username}**!`,attachment)
   })
