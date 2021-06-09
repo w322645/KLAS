@@ -859,10 +859,10 @@ client.on('message', async message => {
     ctx.fillStyle = "#1e90ff"
     ctx.textAlign = "center"
     ctx.fillText(`${member.user.username}`, 325, 270);
-    ctx.font = "bold 48x Arial";
+    ctx.font = "bold 48px Arial";
     ctx.fillStyle = "#FF0000";
     ctx.textAlign = "left";
-    ctx.fillText(`#${member.guild.memberCount}`, 412.5, 75)
+    ctx.fillText(`#${member.guild.memberCount}`, 490.5, 120)
     
     ctx.beginPath();
     ctx.arc(325, 150, 75, 0, Math.PI * 2);
@@ -888,13 +888,13 @@ client.on('message', async message => {
     ctx.strokeStyle = '#74037b';
     ctx.strokeRect(0, 0, canvas.width, canvas.height);
     ctx.font = "bold 34px Arial";
-    ctx.fillStyle = "#000000"
+    ctx.fillStyle = "#1e90ff"
     ctx.textAlign = "center"
-    ctx.fillText(`${member.user.username}`, 325, 220);
-    ctx.font = "bold 48x Arial";
+    ctx.fillText(`${member.user.username}`, 325, 270);
+    ctx.font = "bold 48px Arial";
     ctx.fillStyle = "#FF0000";
     ctx.textAlign = "left";
-    ctx.fillText(`#${member.guild.memberCount}`, 412.5, 75)
+    ctx.fillText(`#${member.guild.memberCount}`, 490.5, 120)
     
     ctx.beginPath();
     ctx.arc(325, 150, 75, 0, Math.PI * 2);
