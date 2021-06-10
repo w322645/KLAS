@@ -2,6 +2,7 @@ const Discord = require("discord.js")
 
 exports.run = async (client, message, args) => {
     let kullanici = message.mentions.members.first();
+  let etiket = message.mentions.members.first();
 
     if (!message.member.voice.channel) {
         const hata = new Discord.MessageEmbed()
@@ -17,7 +18,7 @@ exports.run = async (client, message, args) => {
         return message.channel.send(hata)
     }
 
-    if (!kullanici) {
+    if (!etiket) {
         const hata = new Discord.MessageEmbed()
         .setDescription(`Gitmek istediğin kişiyi etiketle.`)
         .setColor('#ff0000')
