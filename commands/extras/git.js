@@ -3,20 +3,21 @@ const Discord = require("discord.js")
 exports.run = async (client, message, args) => {
     let kullanici = message.mentions.members.first();
   let etiket = message.mentions.members.first();
-  let git = args.slice(1).join(" ");
   
-  if(!git) {
-    const git = new Discord.MessageEmbed()
-    .setDescription('Gitmek İstediğiniz Kişiyi Etiketleyiniz')
-    .setColor('#ff0000')
-    message.channel.send(git)
-  }
+
     if (!message.member.voice.channel) {
         const hata = new Discord.MessageEmbed()
         .setDescription(`Bir ses kanalında olman gerekiyor.`)
         .setColor('#ff0000')
         return message.channel.send(hata)
     }
+  
+    if(!message.mentions.members.first()) {
+    const git = new Discord.MessageEmbed()
+    .setDescription('Gitmek İstediğiniz Kişiyi Etiketleyiniz')
+    .setColor('#ff0000')
+    return message.channel.send(git)
+  }
 
     if (!kullanici.voice.channel) {
         const hata = new Discord.MessageEmbed()
