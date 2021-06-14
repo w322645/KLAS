@@ -13,7 +13,7 @@ if(!prefix){
         
 <:2506_Steam:826232539055259658> __**Steam Profilim**__ → *https://steamcommunity.com/id/sualp_w3q*
 
-<:Discord:826238346694492200> __**Discord Sunucumuz**__ → *https://discord.gg/uVDAebMFWk*
+<:Discord:826238346694492200> __**Discord Sunucumuz**__ → *https://discord.gg/efda*
 
 <:instagram:826232877242777641> __**İnstagram**__ → *https://www.instagram.com/efdabot/*
 

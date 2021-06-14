@@ -82,9 +82,9 @@ client.on("message", message => {
     ) //sunucuya bak knk
     .addField(
       " Sahibim İd si;",
-      "<:okeys:820285379298328607> `275926652842934272`"
+      "<:okeys:820285379298328607> `852641223947845743`"
     ) //DUR DUR  LA DUR ADD FİELD BU SET DESCRİPTİON DEİL SET DESCRİPTİON İLE OYUN OYNA AMA ADDFİELD İLE YANLIŞ YAPMA ŞANSIN YOK BEN NİYE CAPSLE YAZIYOM AQ sunucuya geç
-    .addField(" Sahibim;", "<:okeys:820285379298328607> <@!275926652842934272>")
+    .addField(" Sahibim;", "<:okeys:820285379298328607> <@!852641223947845743>")
   .addField(" Web Sitem;", "<:okeys:820285379298328607> [Burdan Gidebilirsiniz](https://www.efdabot.ml)")//TAM AGA SAKİN SİKCEKMİŞ GİBİ BAĞIRIYON ASOIDHJAOISHDJFASFO
     .setFooter(client.user.username)
     .setThumbnail("https://cdn.glitch.com/478cc1e8-9c56-49a4-b910-3247fb1894aa%2Fezgif.com-gif-maker-6c3ab6491a5e480d7.gif?v=1621708715117");
