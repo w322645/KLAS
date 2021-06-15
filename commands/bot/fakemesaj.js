@@ -2,12 +2,12 @@
 
 exports.run = function (client, message, args) {
     let kişi = message.mentions.users.first();
-    if (message.mentions.users.size < 1) return message.reply('Lütfen Birisini Etiketle')
+    if (message.mentions.users.cache.size < 1) return message.reply('Lütfen Birisini Etiketle')
     let yazi = args[1]
     if (!yazi) return message.reply('Lütfen Yazini Yaz')
     message.delete()
-    message.channel.createWebhook(kişi.username, kişi.avatarURL)
-    .then(webhook => webhook.edit(kişi.username, kişi.avatarURL)
+    message.channel.createWebhook(kişi.username, kişi.avatarURL())
+    .then(webhook => webhook.edit(kişi.username, kişi.avatarURL())
         .then(wb => {
             const hook = new Discord.WebhookClient(wb.id, wb.token);
             hook.send(yazi)
