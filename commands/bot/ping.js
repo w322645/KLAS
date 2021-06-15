@@ -5,9 +5,9 @@ const moment = require('moment');
 require('moment-duration-format');
 exports.run = async (client, message, args) => {
    var olcum = await message.channel.send( ' Ölçüm yapılıyor, lütfen bekleyiniz...');
- var sonuc = await message.channel.send( " Veriler alındı...").then(msg => msg.delete(3000))
+   var sonuc = await message.channel.send( " Veriler alındı...")
      await olcum.edit( ` **Tepki Gecikmesi** \`${Math.round((sonuc.createdTimestamp - olcum.createdTimestamp - client.ws.ping) )}\`**ms**\n **Bot Gecikmesi** \`${Math.round(client.ws.ping)}\`**ms**`);
-///
+  ///
   
   
 }
