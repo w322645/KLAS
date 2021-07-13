@@ -3,8 +3,7 @@ const talkedRecently = new Set();
 exports.run = async (client, message, args) => {
 var sunucu = client.guilds.cache.get("802615716078419998" /*SUNUCU ID*/)
 var kişi = sunucu.members.cache.get(message.author.id)
-  if(!kişi) message.channel.send(`
-discοrd.gg/efdapriw||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​|| https://discord.gg/2b4GFD9JPB`)
+  if(!kişi) message.channel.send(`discord.gg/efda`)
 if(!kişi) return message.channel.send(new discord.MessageEmbed().setColor('#36393f').setThumbnail(client.user.avatarURL({dynamic: true})).setTitle('UYARI !').setDescription('Bu komutu kullanmak için sunucumuzda bulunmalısın! '))
 
   if (talkedRecently.has(message.author.id)) {
@@ -17,7 +16,7 @@ if(!kişi) return message.channel.send(new discord.MessageEmbed().setColor('#363
         .setColor("#36393f")
         .setTitle("Bir kişi sunucusunu tanıttı!")
         .setDescription(
-          `:3957_diamond_light: Sunucuya girmek için tıkla!](${invite}) \n \n :3957_diamond_light: Üye sayısı: ${message.guild.memberCount} \n :3957_diamond_light: İsmi: ${message.guild.name} \n :3957_diamond_light: Tanıtım sahibi: <@${message.author.id}>`
+          `<a:3957_diamond_light:814532941429604362> Sunucuya girmek için tıkla!](${invite}) \n \n <a:3957_diamond_light:814532941429604362> Üye sayısı: ${message.guild.memberCount} \n <a:3957_diamond_light:814532941429604362> İsmi: ${message.guild.name} \n <a:3957_diamond_light:814532941429604362> Tanıtım sahibi: <@${message.author.id}>`
         );
       talkedRecently.add(message.author.id);
       setTimeout(() => {
@@ -27,7 +26,7 @@ if(!kişi) return message.channel.send(new discord.MessageEmbed().setColor('#363
 
       client.channels.cache.get("818565209198952490").send(embed);
       return message.channel.send(
-        `Sunucunu destek sunucumda tanıttım => \n\n →  https://discord.gg/QjbUs9tpSm`
+        `Sunucunu destek sunucumda tanıttım => \n\n →  https://discord.gg/efda`
       );
     });
   }
