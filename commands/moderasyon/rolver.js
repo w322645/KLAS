@@ -9,8 +9,7 @@ exports.run = (client, message, args) => {
       var p = "?"
     }
 
-  if (!message.guild) return;
-  if (!message.member.hasPermission("MANAGE_ROLES")) return message.reply('Yeterli yetkin yok :c');
+
   let guild = message.guild
   let rol = message.mentions.roles.first()  
   let user = message.mentions.members.first() 
@@ -32,7 +31,7 @@ exports.conf = {
   enabled: true,
   guildOnly: true,
   aliases: ['rolver'],
-  permLevel: 2
+  permLevel: 4
 };
 
 exports.help = {
