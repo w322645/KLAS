@@ -31,7 +31,7 @@ exports.conf = {
   enabled: true,
   guildOnly: true,
   aliases: ['rolver'],
-  permLevel: 4
+  permLevel: 2
 };
 
 exports.help = {
