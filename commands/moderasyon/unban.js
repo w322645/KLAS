@@ -29,7 +29,7 @@ exports.run = async(client, message, args) => {
 
 exports.conf = {
 aliases: ["unban","yasak-kaldır","yasakkadlır"],
-permLevel: 2
+permLevel: 4
 };
 exports.help = {
 name: 'ban-kaldır',
