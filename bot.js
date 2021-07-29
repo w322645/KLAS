@@ -4,13 +4,12 @@ const config = require("./config.json");
 const { sahip, mailUsername, mailPasscode } = require("./config.json");
 const AsciiTable = require("ascii-table");
 const fs = require("fs");
+require("./util/eventHandler.js")(client);
 const qdb = require("quick.db");
 let tarih = new Date().toLocaleString("tr-TR", { timeZone: "Asia/Istanbul" });
 const db = require("quick.db");
 const moment = require("moment");
 const Canvas = require('canvas')
-
-
 /////TABLES
 var commandtable = new AsciiTable("EFDA BOT KOMUT MASASI");
 ////
