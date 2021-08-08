@@ -1,7 +1,15 @@
 const Discord = require("discord.js");
+const db = require('quick.db');
 const ayarlar = require("../../config.json");
 exports.run = (client, message, args) => {
-  let prefix = ayarlar.prefix;
+    if(!message.guild){
+    var prefix = "?";
+  } else {
+  var prefix = db.fetch(`prefix_${message.guild.id}`);
+  if (!prefix) {
+    var prefix = "?";
+  }
+  };
   let rol = message.mentions.roles.first();
   if (!rol)
     return message.channel.send(
