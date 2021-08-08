@@ -39,7 +39,7 @@ if(args[0] > 1000) return;
 const canvas = Canvas.createCanvas(770, 125);
 const ctx = canvas.getContext('2d');
 
-const background = await Canvas.loadImage('https://cdn.glitch.com/4c013941-f48a-482b-8d70-20364bcd8bd4%2F5bco9wh.png?v=1628440862395');
+const background = await Canvas.loadImage('https://cdn.glitch.com/4c013941-f48a-482b-8d70-20364bcd8bd4%2F5bco9wh.png?v=1628441289096');
 ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 ctx.fillStyle = '#2b2b2b';
 ctx.font = '14px "newFont"';
