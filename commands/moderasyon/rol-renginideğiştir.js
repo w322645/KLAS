@@ -1,22 +1,14 @@
 const Discord = require("discord.js");
-const db = require("quick.db");
-const ayarlar = require("../../config.json");
+const ayarlar = require("../ayarlar.json");
 exports.run = (client, message, args) => {
-      var e = db.fetch(`prefix_${message.guild.id}`)
-    if(e){
-      var p = e
-    }
-    if(!e){
-      var p = "?"
-    }
+  if (!message.member.hasPermission("MANAGE_ROLES"));
+  let prefix = ayarlar.prefix;
   let rol = message.mentions.roles.first();
   if (!rol)
-
     return message.channel.send(
-      
       new Discord.MessageEmbed()
         .setDescription(
-          `Bir Rol Belirt\nÖrnek Kullanım ${p}rolrengi @rol rolkodu\nRol Kodunun Başına # Koymayın
+          `Bir Rol Belirt\nÖrnek Kullanım ${prefix}rolrengi @rol rolkodu\nRol Kodunun Başına # Koymayın
           
           Renk Kodlarını Nerden Bakıcam Derseniz
           
@@ -29,7 +21,7 @@ exports.run = (client, message, args) => {
     return message.channel.send(
       new Discord.MessageEmbed()
         .setDescription(
-          `Bir Renk Kodu Belirtmelisin\n Örnek Kullanım: ${p}rolrengi @rol renkkodu\n Renk Kodunun başına # Koymayın
+          `Bir Renk Kodu Belirtmelisin\n Örnek Kullanım: ${prefix}rolrengi @rol renkkodu\n Renk Kodunun başına # Koymayın
           
           Renk Kodlarını Nerden Bakıcam Derseniz
           
