@@ -14,11 +14,11 @@ module.exports = client => {
       client.user.username
     } ismi ile giriş yapıldı!`
   );
-  client.user.setStatus("idle");
+  client.user.setStatus("dnd");
   var oyun = [
     `EF&DA ?prefix`,
     `?yardım ?prefix`,
-  `🌐 www.efdabot.ml 🌐`,
+    `🌐 www.efdabot.ml 🌐`,
     `${client.guilds.cache.size} sunucu, ${client.users.cache.size} kişiye hizmet veriyorum!`
   ];
 
@@ -27,6 +27,4 @@ module.exports = client => {
 
     client.user.setActivity(oyun[random], "");
   }, 2 * 2500);
-
-
 };

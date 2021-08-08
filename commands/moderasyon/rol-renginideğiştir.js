@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 const ayarlar = require("../../config.json");
 exports.run = (client, message, args) => {
-  if (!message.member.hasPermission("MANAGE_ROLES"));
   let prefix = ayarlar.prefix;
   let rol = message.mentions.roles.first();
   if (!rol)
@@ -41,7 +40,7 @@ exports.conf = {
   enabled: true,
   guildOnly: false,
   aliases: ["rol-rengi",'rolrenk','rolrengi'],
-  permLevel: 0,
+  permLevel: 5,
 }; 
 exports.help = {
   name: "rr",
