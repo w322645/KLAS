@@ -1,14 +1,21 @@
 const Discord = require("discord.js");
-const ayarlar = require("../ayarlar.json");
+const db = require('quick.db');
+const ayarlar = require("../../config.json");
 exports.run = (client, message, args) => {
-  if (!message.member.hasPermission("MANAGE_ROLES"));
+      var e = db.fetch(`prefix_${message.guild.id}`)
+    if(e){
+      var p = e
+    }
+    if(!e){
+      var p = "?"
+    }
   let prefix = ayarlar.prefix;
   let rol = message.mentions.roles.first();
   if (!rol)
     return message.channel.send(
       new Discord.MessageEmbed()
         .setDescription(
-          `Bir Rol Belirt\nÖrnek Kullanım ${prefix}rolrengi @rol rolkodu\nRol Kodunun Başına # Koymayın
+          `Bir Rol Belirt\nÖrnek Kullanım ${p}rolrengi @rol rolkodu\nRol Kodunun Başına # Koymayın
           
           Renk Kodlarını Nerden Bakıcam Derseniz
           
@@ -21,7 +28,7 @@ exports.run = (client, message, args) => {
     return message.channel.send(
       new Discord.MessageEmbed()
         .setDescription(
-          `Bir Renk Kodu Belirtmelisin\n Örnek Kullanım: ${prefix}rolrengi @rol renkkodu\n Renk Kodunun başına # Koymayın
+          `Bir Renk Kodu Belirtmelisin\n Örnek Kullanım: ${p}rolrengi @rol renkkodu\n Renk Kodunun başına # Koymayın
           
           Renk Kodlarını Nerden Bakıcam Derseniz
           
@@ -40,9 +47,9 @@ exports.run = (client, message, args) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ["rol-rengi",'rolrenk','rolrengi'],
-  permLevel: 5,
-}; 
+  aliases: ["rolrenk"],
+  permLevel: 2,
+}; //DevTR
 exports.help = {
   name: "rr",
   description: "Rolun Rengini Değiştirir",
