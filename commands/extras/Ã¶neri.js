@@ -18,7 +18,7 @@ exports.run = async (client, message, args) => {
   var oneri = args.join(" ").slice(0);
   if (!oneri) {
     message.channel.send(new Discord.MessageEmbed().setColor(hengover).setDescription(
-      `**:frowning:  Hey Dostum Yanlış Kullanıyorsun. Merak Etme Ben Burdayım :kopke:** \n :arrow_right: \`Örnek: ${prefix}öneri Efda Oy Vermeyen Banlansın\``
+      `**:frowning:  Hey Dostum Yanlış Kullanıyorsun. Merak Etme Ben Burdayım <:10:853187868046131201>** \n :arrow_right: \`Örnek: ${prefix}öneri Efda Oy Vermeyen Banlansın\``
     ));
 
     return;
