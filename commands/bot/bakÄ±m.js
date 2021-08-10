@@ -1,7 +1,7 @@
 const { MessageEmbed } = require('discord.js');
 const qdb = require('quick.db');
 exports.run = async(client, message, args) => {
-  var sahip = "275926652842934272"
+  var sahip = "852641223947845743"
   if(message.author.id !== sahip) return message.channel.send(
   new MessageEmbed()
     .setColor('#36393f')

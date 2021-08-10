@@ -20,7 +20,7 @@ module.exports = message => {
 
   if (!message.content.startsWith(prefix)) return;
   if(db.has(`bakım_${client.user.id}`)){
-    if(message.author.id !== "275926652842934272") return message.channel.send(
+    if(message.author.id !== "852641223947845743") return message.channel.send(
     new Discord.MessageEmbed()
       .setColor("#36393f")
       .setAuthor(`${client.user.username} Bakım 👨‍🔬`, client.user.displayAvatarURL({dynamic: true, format: "png"}))

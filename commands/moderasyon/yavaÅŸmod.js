@@ -4,6 +4,7 @@ const qdb = require('quick.db');
 exports.run = (client, msg, args) => {
 
 
+
  if (talkedRecently.has(msg.author.id)) {
            return msg.channel.send(new Discord.MessageEmbed().setColor('#36393f').setTitle('UYARI !').setDescription(`\`5\` Saniye de Bir Kullanabilirsin - <@!${msg.author.id}>`))
      .then(x => {x.delete({timeout: 3000})})
@@ -13,11 +14,6 @@ exports.run = (client, msg, args) => {
 
         // Adds the user to the set so that they can't talk for a minute
         talkedRecently.add(msg.author.id);
-        setTimeout(() => {
-       msg.delete();
-          // Removes the user from the set after a minute
-          talkedRecently.delete(msg.author.id);
-        }, 5000);// Şuan 5 Saniyedir Değiştirebilirsiniz.
     }
     var e = qdb.fetch(`prefix_${msg.guild.id}`);
   if (e) {

@@ -12,11 +12,6 @@ const Discord = require('discord.js')
 
         // Adds the user to the set so that they can't talk for a minute
         talkedRecently.add(message.author.id);
-        setTimeout(() => {
-        message.delete();
-          // Removes the user from the set after a minute
-          talkedRecently.delete(message.author.id);
-        }, 5000);// Şuan 5 Saniyedir Değiştirebilirsiniz.
     }
         let kullanıcı = message.mentions.members.first();
         let ses = message.member.voice.channel

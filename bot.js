@@ -841,7 +841,7 @@ client.on('message', async message => {
 //-----------------------RESİMLİ GİRİŞ ÇIKŞ----------------------\\
 //-----------------------RESİMLİ GİRİŞ ÇIKŞ----------------------\\
 
-//3f7b0028-f947-4f5a-b2a6-d90ab4c59568%2Fgiri\305%9F yaptı.png?v=1617739886620
+//3f7b0028-f947-4f5a-b2a6-d90ab4c59568%2Fgiri\305%9F yaptbakım?v=1617739886620
   client.on("guildMemberAdd", async member => {
     const guild = member.guild
     if(!guild) return;
