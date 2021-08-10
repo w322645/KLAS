@@ -13,11 +13,6 @@ module.exports.run = async (bot, message, args) => {
 
         // Adds the user to the set so that they can't talk for a minute
         talkedRecently.add(message.author.id);
-        setTimeout(() => {
-        message.delete();
-          // Removes the user from the set after a minute
-          talkedRecently.delete(message.author.id);
-        }, 5000);// Şuan 5 Saniyedir Değiştirebilirsiniz.
     }
   var args = message.content.split(' ').slice(1).join(' ');
   if(!message.member.hasPermission("MANAGE_NICKNAMES")) return (message.channel.send("❌ Üzgünüz, Yönetici yetkisine sahip değilsiniz.."));

@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 const ayarlar = require('../../config.json')
-
+  const talkedRecently = new Set();
 exports.run = (client, message, args) => {
   
   if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(`Bu komutu kullanabilmek için **Mesajları Yönet** iznine sahip olmalısın!`);

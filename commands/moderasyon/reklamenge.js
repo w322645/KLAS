@@ -1,6 +1,7 @@
 const db = require('quick.db')
 const Discord = require('discord.js')
  let ayarlar = ['aç','kapat']
+   const talkedRecently = new Set();
 exports.run = async (bot, message, args) => {
    var e = db.fetch(`prefix_${message.guild.id}`)
   if(e){

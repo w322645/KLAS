@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const db = require('quick.db');
 const ayarlar = require("../../config.json");
 exports.run = (client, message, args) => {
+  
       var e = db.fetch(`prefix_${message.guild.id}`)
     if(e){
       var p = e
