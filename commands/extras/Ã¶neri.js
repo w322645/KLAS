@@ -17,7 +17,7 @@ exports.run = async (client, message, args) => {
 
   var oneri = args.join(" ").slice(0);
   if (!oneri) {
-    message.channel.send(new Discord.MessageEmbed().setDescription(
+    message.channel.send(new Discord.MessageEmbed().setColor(hengover).setDescription(
       `**:frowning:  Hey Dostum Yanlış Kullanıyorsun. Merak Etme Ben Burdayım :kopke:** \n :arrow_right: \`Örnek: ${prefix}öneri Efda Oy Vermeyen Banlansın\``
     ));
 
@@ -38,7 +38,7 @@ exports.run = async (client, message, args) => {
     });
   }
 
-  message.channel.send(new Discord.MessageEmbed().setColor/(.setDescription(
+  message.channel.send(new Discord.MessageEmbed().setColor(hengover).setDescription(
     `:white_check_mark: **Öneriniz başarıyla alındı!** \n :pen_ballpoint:  _Önerin ${önerikanalı} kanalına düştü_`
   ));
 };
