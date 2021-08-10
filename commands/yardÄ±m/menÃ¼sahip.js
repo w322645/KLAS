@@ -34,7 +34,7 @@ exports.run = async (client, message, args) => {
       `> **${prefix}bakım** : Botu Bakım Moduna Sokar\n> **${prefix}ayrıl** : Yazılan Sunucudan Bot Çıkış Yapar\n> **${prefix}eval** : Eval Komut Test\n> **${prefix}avatar-ayarla** : Botun Resmini Değiştirirsiniz\n> **${prefix}komutlar** : Komutların Sayısı Ve komutlar\n> **${prefix}bot-restart** : Bota Restart Atarsınız\n> **${prefix}kaç-cm** : Kaç Santim\n> **${prefix}fçık** : Fake Veri Tabanlı Çıkış\n> **${prefix}fgir** : Fake Veri Tabanlı Giriş\n> **${prefix}sönmezreis** : Sönmez Reis Küfürlü\n`
     )
     .setImage(
-      "https://api.creavite.co/out/9b5f04a4-8250-4bae-b112-552815d12128_standard.gif"
+      ""
     );
   message.channel.send(sahipyarrakvar);
 };

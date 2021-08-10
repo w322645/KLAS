@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const db = require("quick.db");
 exports.run = async (client, message, args) => {
+   var hengover = '#36393f'
   if(db.has(`prefix_${message.guild.id}`)){
     var prefix = db.fetch(`prefix_${message.guild.id}`)
   }
@@ -10,15 +11,15 @@ exports.run = async (client, message, args) => {
     channel => channel.id === ökanal
   );
   if (!ökanal)
-    return message.channel.send(
-      `:frowning:  **Maalesef Bir Öneri Kanalı Ayarlanmamış.** :arrow_right: \`Ayarlamak İçin $[prefix}öneri-kanal #kanal\` `
-    );
+    return message.channel.send(new Discord.MessageEmbed().setColor(hengover).setDescription(
+      `:frowning:  **Maalesef Bir Öneri Kanalı Ayarlanmamış.** :arrow_right: \`Ayarlamak İçin ${prefix}öneri-kanal #kanal\` `
+    ));
 
   var oneri = args.join(" ").slice(0);
   if (!oneri) {
-    message.channel.send(
-      `**:frowning:  Hey Dostum Yanlış Kullanıyorsun. Merak Etme Ben Burdayım :kopke:** \n :arrow_right: \`Örnek: ?öneri Efda Oy Vermeyen Banlansın\``
-    );
+    message.channel.send(new Discord.MessageEmbed().setDescription(
+      `**:frowning:  Hey Dostum Yanlış Kullanıyorsun. Merak Etme Ben Burdayım :kopke:** \n :arrow_right: \`Örnek: ${prefix}öneri Efda Oy Vermeyen Banlansın\``
+    ));
 
     return;
   } else {
@@ -26,7 +27,7 @@ exports.run = async (client, message, args) => {
       .setTitle("Yeni Bir Öneri Var!")
       .addField(":diamonds: Öneren Kullanıcı:", `${message.author.tag}`)
       .addField(`:flashlight: Öneri`, oneri)
-      .setColor("RED")
+      .setColor("hengover")
       .setTimestamp()
       .setThumbnail(client.user.displayAvatarURL())
       .setFooter(`Efda Corpation©`);
@@ -37,9 +38,9 @@ exports.run = async (client, message, args) => {
     });
   }
 
-  message.channel.send(
+  message.channel.send(new Discord.MessageEmbed().setColor/(.setDescription(
     `:white_check_mark: **Öneriniz başarıyla alındı!** \n :pen_ballpoint:  _Önerin ${önerikanalı} kanalına düştü_`
-  );
+  ));
 };
 
 exports.conf = {

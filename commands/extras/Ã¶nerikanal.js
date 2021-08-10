@@ -3,13 +3,13 @@ const db = require("quick.db");
 
 exports.run = async (client, message, args) => {
  
-var e = db.fetch(`prefix_${message.guild.id}`)
-if(e){
-  var prefix = e
-}
-if(!e){
-  var prefix = "?"
-}
+      var e = db.fetch(`prefix_${message.guild.id}`)
+    if(e){
+      var p = e
+    }
+    if(!e){
+      var p = "?"
+    }
   if (!message.member.hasPermission("MANAGE_CHANNELS"))
     return message.channel.send(
       "**:frowning: Üzgünüm bu komudu kullanmak için `Kanalları Yönet` yetkisine sahip olman gerek.**"
@@ -28,7 +28,7 @@ if(!e){
   } else {
     db.set(`önerikanal_${message.guild.id}`, kanal.id);
     return message.channel.send(
-      ` **Önerilerin gönderileceği başarıyla ${kanal} olarak ayarlandı.** \n :arrow_right: \`\`Sıfırlamak için ${prefix}öneri-ayarla sıfırla\`\` `
+      ` **Önerilerin gönderileceği başarıyla ${kanal} olarak ayarlandı.** \n :arrow_right: \`\`Sıfırlamak için ${p}öneri-ayarla sıfırla\`\` `
     );
   }
 };
