@@ -6,17 +6,6 @@ var ayarlar = require('../../config.json');
 exports.run = async (client, message, args) => {
  
 
- 
- if (talkedRecently.has(message.author.id)) {
-           return message.channel.send(new Discord.MessageEmbed().setColor('#36393f').setTitle('UYARI !').setDescription(`\`5\` Saniye de Bir Kullanabilirsin - <@!${message.author.id}>`))
-     .then(x => {x.delete({timeout: 3000})})
-    } else {
-
-           // the user can type the command ... your command code goes here :)
-
-        // Adds the user to the set so that they can't talk for a minute
-        talkedRecently.add(message.author.id);
-    }
  if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send(':no_entry: Oylama kanalı ayarlamak için `Yönetici` yetkisine sahip olman gerek.')
      let oylamakanali = message.mentions.channels.first();
      if (!oylamakanali) return message.channel.send(':no_entry: Oylama kanalı ayarlamak için bir kanal etiketlemeniz gerekli. `-oylama-kanal #kanal`')

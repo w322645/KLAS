@@ -3,16 +3,6 @@ const talkedRecently = new Set();
 
 exports.run = function(client, message, args) {
 
- if (talkedRecently.has(message.author.id)) {
-           return message.channel.send(new Discord.MessageEmbed().setColor('#36393f').setTitle('UYARI !').setDescription(`\`5\` Saniye de Bir Kullanabilirsin - <@!${message.author.id}>`))
-     .then(x => {x.delete({timeout: 3000})})
-    } else {
-
-           // the user can type the command ... your command code goes here :)
-
-        // Adds the user to the set so that they can't talk for a minute
-        talkedRecently.add(message.author.id);
-    }
   const m = args.join(' ');
   if(!m) return message.channel.send('**:gear: Bir miktar girmelisiniz!**').then(x => {x.delete({timeout: 3000})});
   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('**:xx: Bu işlem için gerekli izne sahip değilsiniz!**').then(x => {x.delete({timeout: 3000})});

@@ -4,16 +4,6 @@ module.exports.run = async (bot, message, args) => {
 
 
 
- if (talkedRecently.has(message.author.id)) {
-           return message.channel.send(new MessageEmbed().setColor('#36393f').setTitle('UYARI !').setDescription(`\`5\` Saniye de Bir Kullanabilirsin - <@!${message.author.id}>`))
-     .then(x => {x.delete({timeout: 3000})})
-    } else {
-
-           // the user can type the command ... your command code goes here :)
-
-        // Adds the user to the set so that they can't talk for a minute
-        talkedRecently.add(message.author.id);
-    }
   if (!args[0]) return message.channel.send("**Lütfen Bir Rol Girin!**");
   let rol =
     message.mentions.roles.first() ||
