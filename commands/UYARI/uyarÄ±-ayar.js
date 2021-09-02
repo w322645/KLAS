@@ -8,23 +8,23 @@ exports.run = async(client, message, args) => {
     if(!e){
       var p = "?"
     }
-if(!args[0]) return message.channel.send(new Discord.MessageEmbed().setColor('#36393f').setDescription(`Bir komut belirtmelisiniz. Sâvagé Uyarı Sistemi'ni kullanmayı bilmiyorsanız: \`${p}uyar-ayar yardım\``))
+if(!args[0]) return message.channel.send(new Discord.MessageEmbed().setColor('#36393f').setDescription(`Bir komut belirtmelisiniz.EFDA Uyarı Sistemi'ni kullanmayı bilmiyorsanız: \`${p}uyarı-ayar yardım\``))
 if(args[0] === "log"){
 var kanal = message.mentions.channels.first();
-if(!kanal) return message.channel.send(new Discord.MessageEmbed().setColor('#36393f').setDescription(`Bir kanal belirtmelisiniz. Sâvagé Uyarı Sistemi'ni kullanmayı bilmiyorsanız: \`${p}uyar-ayar yardım\``))
+if(!kanal) return message.channel.send(new Discord.MessageEmbed().setColor('#36393f').setDescription(`Bir kanal belirtmelisiniz. EFDA Uyarı Sistemi'ni kullanmayı bilmiyorsanız: \`${p}uyarı-ayar yardım\``))
 db.set(`uyarilog_${message.guild.id}`, kanal.id)
 return message.channel.send(new Discord.MessageEmbed().setColor('#36393f').setDescription("Uyarı Log kanalı ayarlandı."))
 };
 if(args[0] === "yetkili" || args[0] === "görevli"){
 var rol = message.mentions.roles.first();
-if(!rol) return message.channel.send(new Discord.MessageEmbed().setColor('#36393f').setDescription(`Bir rol belirtmelisiniz. Sâvagé Uyarı Sistemi'ni kullanmayı bilmiyorsanız: \`${p}uyar-ayar yardım\``))
+if(!rol) return message.channel.send(new Discord.MessageEmbed().setColor('#36393f').setDescription(`Bir rol belirtmelisiniz. EFDA  Uyarı Sistemi'ni kullanmayı bilmiyorsanız: \`${p}uyarı-ayar yardım\``))
 db.set(`uyariyetkili_${message.guild.id}`, rol.id)
 return message.channel.send(new Discord.MessageEmbed().setColor('#36393f').setDescription(`\`Uyarı Yetkilisi\` rol'ü <@&${rol.id}> olarak ayarlandı!`))
 };
 if(args[0] === "sınır"){
 var sınır = args.slice(1).join('')
-if(!sınır) return message.channel.send(new Discord.MessageEmbed().setColor('#36393f').setDescription(`Bir sayı belirtmelisiniz. EFDA Uyarı Sistemi'ni kullanmayı bilmiyorsanız: \`${p}uyar-ayar yardım\``))
-if(isNaN(sınır)) return message.channel.send(new Discord.MessageEmbed().setColor('#36393f').setDescription(`Bir sayı belirtmelisiniz. Sâvagé Uyarı Sistemi'ni kullanmayı bilmiyorsanız: \`${p}uyar-ayar yardım\``))
+if(!sınır) return message.channel.send(new Discord.MessageEmbed().setColor('#36393f').setDescription(`Bir sayı belirtmelisiniz. EFDA Uyarı Sistemi'ni kullanmayı bilmiyorsanız: \`${p}uyarı-ayar yardım\``))
+if(isNaN(sınır)) return message.channel.send(new Discord.MessageEmbed().setColor('#36393f').setDescription(`Bir sayı belirtmelisiniz. EFDA  Uyarı Sistemi'ni kullanmayı bilmiyorsanız: \`${p}uyarı-ayar yardım\``))
 if(sınır > 2000) return message.channel.send(new Discord.MessageEmbed().setColor('#36393f').setDescription(`Girdiğiniz sayı 2000'den küçük olmalıdır.`))
 db.set(`uyarisinir_${message.guild.id}`, sınır)
 return message.channel.send(new Discord.MessageEmbed().setColor('#36393f').setDescription("Uyarı sınırı ayarlandı!"))
