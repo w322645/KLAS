@@ -23,7 +23,7 @@ exports.run = (client, message, args) => {
   if (!user.hasPermission("ADMINISTRATOR"))
     x = "<a:9612_uncheck_ravena:814532952795906049>";
 
-  //Denetim kaydı
+  //Denetim kaydı izimlerim
   if (user.hasPermission("VIEW_AUDIT_LOG"))
     x2 = "<a:1805_check_ravena:814532953698730064>";
   if (!user.hasPermission("VIEW_AUDIT_LOG"))
@@ -89,7 +89,7 @@ exports.run = (client, message, args) => {
     )
     .addField(
       "Başında <a:9612_uncheck_ravena:814532952795906049> olanlar o yetkiye sahip olunmadığını gösterir. \nBaşında <a:1805_check_ravena:814532953698730064>  olanlar o yetkiye sahip olunduğunu gösterir.",
-      `Efda İzimler Menüsü`
+      `Efda İzinler Menüsü`
     );
   return message.channel.send(embed);
 };
