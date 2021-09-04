@@ -4,7 +4,7 @@ const superagent = require("superagent");
 const snekfetch = require("snekfetch");
 exports.run = async (client, message, args) => {
   const query = args.join(" ");
-   const problem = args.join(" ");
+   const problem = args[0];
   const { body } = await snekfetch
     .get("https://tr.wikipedia.org/w/api.php")
     .query({
@@ -17,7 +17,6 @@ exports.run = async (client, message, args) => {
       redirects: "",
       formatversion: 2
     });
-  if(problem) return message.channel.send('Birşey Y')
   if (body.query.pages[0].missing) return message.channel.send("Maalesef sonuç bulunamadı.");
   const devtr = new Discord.MessageEmbed()
     .setColor(0x00a2e8)
