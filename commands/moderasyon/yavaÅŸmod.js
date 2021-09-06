@@ -21,16 +21,16 @@ if (isNaN(limit)) {
     return
 }
   
-if (limit > 120) {
+if (limit > 21600) {
   var x = new Discord.MessageEmbed()
-  .setDescription("Yazma sınırı (süresi) limiti maksimum **120** saniye olabilir!")
+  .setDescription("Yazma sınırı (süresi) limiti maksimum **21600** saniye olabilir!")
   .setColor("#36393f")
   msg.channel.send({embed: x});
     return
 }
     var e = new Discord.MessageEmbed()
     .setDescription(`Yazma sınırı (süresi) başarıyla **${limit}** saniye olarak ayarlanmıştır!`)
-    .setThumbnail(`https://dummyimage.com/140x140/2f3136f/f2f2f2&text=Saniye%20${limit}`)
+    .setThumbnail(`https://dummyimage.com/500x500/2f3136f/f2f2f2&text=${limit}%20Saniye`)
     .setColor("#36393f")
     msg.channel.send({embed: e})
   
