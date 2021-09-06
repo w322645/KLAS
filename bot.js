@@ -971,7 +971,7 @@ client.on("message", async msg => {
         if (!msg.member.permissions.has("ADMINISTRATOR")) {
           if (!msg.mentions.users.first()) {
             msg.delete();
-            return msg.channel.send(`${msg.member}, Capslock Kapat Bro.`).then(x => {x.delete({timeout: 10000})});
+            return msg.channel.send(new Discord.MessageEmbed().setColor("#36393f").setDescription(`${msg.member} Lütfen Kelimelerimize Dikkat Edelim Büyük Harf Dizilimine Dikkat Edelim`)).then(x => {x.delete({timeout: 10000})});
               
           }
         }
