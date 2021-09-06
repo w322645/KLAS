@@ -1,22 +1,41 @@
-const Discord = require("discord.js");
-const qdb = require('quick.db');
-  const talkedRecently = new Set();
-exports.run = (client, msg, args) => {
+const Discord = require('discord.js');
 
-
-    var e = qdb.fetch(`prefix_${msg.guild.id}`);
-  if (e) {
-    var prefix = e;
-  }
-  if (!e) {
-    var prefix = "?";
-  }
+exports.run = async(client, msg, args) => {
 if (msg.channel.type !== "text") return;
-const limit = args[0] ? args[0] : 0;
-if (limit > 120) return msg.channel.send("Süre Limiti Maksimum 120 Saniye Olabilir.");
+  
+const limit = args[0];
+  
+  if(!limit) {
+              var embed = new Discord.MessageEmbed()
+                .setDescription(`Yazma sınırını (süresini) kaç saniye olarak ayarlamak istediğinizi yazınız!`)
+              .setColor("RANDOM")
+            msg.channel.send({embed: embed})
+            return
+          }
+  
+if (isNaN(limit)) {
+  var s = new Discord.MessageEmbed()
+  .setDescription("Yazma sınırını (süresini) kaç saniye olarak ayarlamak istediğinizi yazınız!")
+  .setColor("RANDOM")
+  msg.channel.send({embed: s});
+    return
+}
+  
+if (limit > 10) {
+  var x = new Discord.MessageEmbed()
+  .setDescription("Yazma sınırı (süresi) limiti maksimum **10** saniye olabilir!")
+  .setColor("RANDOM")
+  msg.channel.send({embed: x});
+    return
+}
+    var e = new Discord.MessageEmbed()
+    .setDescription(`Yazma sınırı (süresi) başarıyla **${limit}** saniye olarak ayarlanmıştır!`)
+    .setColor("RANDOM")
+    msg.channel.send({embed: e})
+  
 var request = require('request');
 request({
-    url: `https://discordapp.com/api/v6/channels/${msg.channel.id}`,
+    url: `https://discordapp.com/api/v7/channels/${msg.channel.id}`,
     method: "PATCH",
     json: {
         rate_limit_per_user: limit
@@ -24,12 +43,7 @@ request({
     headers: {
         "Authorization": `Bot ${client.token}`
     },
-});
-
-if (limit == 0) return msg.channel.send(`Yavaşmod Kaldırıldı :ok_hand: \nTekrar Açabilmek İçin ${prefix}yavaşmod **<kaç saniye aralıkla yazılsın>**`);
-return msg.channel.send(`Üyeler Bundan Sonra **${limit}** Saniye Aralıklarla Mesaj Gönderebilecek.`);
-};
-
+})};
 exports.conf = {
   enabled: true,
   guildOnly: false,
