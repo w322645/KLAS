@@ -10,20 +10,20 @@ exports.run = async (client, message, args) => {
     if(!e){
       var p = "?"
     }
-    
+    var renk = '#36393f'
    if (!args[0]) {
- message.channel.send(`**Örnek Kullanım:** ${p}capslock-engel aç/kapat`)
+ message.channel.send(new Discord.MessageEmbed().setTitle('CapsLock Engel Sistemi').setColor(renk).setDescription(`**Örnek Kullanım:** \n\n \`\`\`\n${p}capslock-engel aç/kapat\n\`\`\``))
   }
 
   if(args[0] === 'aç') {
     db.set(`capslock_${message.guild.id}`, true)
-    message.channel.send(`Capslock Engel Sistemi Aktif`)
+    message.channel.send(new Discord.MessageEmbed().setDescription("CapsLock Engel Sistemi Başarıyla Aktfileştirildi <a:evet:814802902954016768>\n İyi Sohbetler Dileriz.").setColor(renk))
   return
 }
 
 if (args[0] === 'kapat') {
   db.delete(`capslock_${message.guild.id}`)
-message.channel.send(`Capslock Engel Sistemi Devre Dışı`)
+message.channel.send(new Discord.MessageEmbed().setColor(renk).setDescription("CapsLock Engel Sistemi Başarıyla Devre Dışı Bırakıldı <a:hayr:814802919542620211>\n İyi Sohbetler Dileriz"))
 return
 }
 
