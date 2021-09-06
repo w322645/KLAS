@@ -961,5 +961,23 @@ client.on("guildCreate", async guild => {
 
 //------------------SUNUCU SAHİBİ MESAJ SON------------------\\
 
+client.on("message", async msg => {
+  if (msg.channel.type === "dm") return;
+  if (msg.author.bot) return;
+  if (msg.content.length > 1) {
+    if (db.fetch(`capslock_${msg.guild.id}`)) {
+      let caps = msg.content.toUpperCase();
+      if (msg.content == caps) {
+        if (!msg.member.permissions.has("ADMINISTRATOR")) {
+          if (!msg.mentions.users.first()) {
+            msg.delete();
+            return msg.channel.send(`${msg.member}, Capslock Kapat Bro.`).then(x => {x.delete({timeout: 10000})});
+              
+          }
+        }
+      }
+    }
+  }
+});
 /* /app/assets/giris.png */
 client.login(process.env.sebastian);
