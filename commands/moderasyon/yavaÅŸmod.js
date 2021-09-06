@@ -19,7 +19,6 @@ if(limit > 0) {
   .setDescription("Yavaş Mod Başarılı Bir Şekilde Kapatılmıştır")
   .setColor(renk)
   msg.channel.send({emded: a});
-   return
 }
 if (isNaN(limit)) {
   var s = new Discord.MessageEmbed()
