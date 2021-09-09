@@ -960,7 +960,7 @@ client.on("guildCreate", async guild => {
   });
 
 //------------------SUNUCU SAHİBİ MESAJ SON------------------\\
-//------------------CAPSLOCK ENGEL--
+//------------------CAPSLOCK ENGEL---------------------------\\
 client.on("message", async msg => {
   if (msg.channel.type === "dm") return;
   if (msg.author.bot) return;
