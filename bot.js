@@ -960,7 +960,7 @@ client.on("guildCreate", async guild => {
   });
 
 //------------------SUNUCU SAHİBİ MESAJ SON------------------\\
-
+//------------------CAPSLOCK ENGEL--
 client.on("message", async msg => {
   if (msg.channel.type === "dm") return;
   if (msg.author.bot) return;
@@ -980,4 +980,28 @@ client.on("message", async msg => {
   }
 });
 /* /app/assets/giris.png */
+
+
+
+//SAYAÇ MESAJ  
+client.on("guildMemberAdd", member => {
+var kanal = qdb.fetch(`sayackanali_${member.guild.id}`)
+if(!kanal) return;
+var hedef = qdb.fetch(`sayachedef_${member.guild.id}`)
+if(!hedef) return;
+client.channels.cache.get(kanal).send(`${member} Sunucuya katıldı! Hedefimize ulaşmamıza ${hedef - member.guild.memberCount} kişi kaldı!`)
+if(hedef <= member.guild.memberCount){
+  client.channels.cache.get(kanal).send(`Hedefimizi başardık! Sunucumuz ${hedef} kişiye ulaştı!`)
+  qdb.delete(`sayackanali_${member.guild.id}`)
+  qdb.delete(`sayachedef_${member.guild.id}`)
+}
+})
+client.on("guildMemberRemove", member => {
+var kanal = qdb.fetch(`sayackanali_${member.guild.id}`)
+if(!kanal) return;
+var hedef = qdb.fetch(`sayachedef_${member.guild.id}`)
+if(!hedef) return;
+client.channels.cache.get(kanal).send(`${member.user.tag} sunucudan ayrıldı! Hedefimize ulaşmamıza ${hedef - member.guild.memberCount} kişi kaldı!`)
+})
+
 client.login(process.env.sebastian);
