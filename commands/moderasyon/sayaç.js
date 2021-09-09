@@ -8,7 +8,7 @@ exports.run = async(client, message, args) => {
       var sayı = args[1]
       if(!sayı) return message.reply(new Discord.MessageEmbed().setTitle('Uyarı !').setColor(renk).setDescription("Sayaç Ayarlamam İçin Bir Sayı Belirtmelisiniz ❌"))
       if(isNaN(sayı)) return message.reply(new Discord.MessageEmbed().setTitle('Uyarı !').setColor(renk).setDescription("Lütfen Sayı Giriniz Harf Değil ❌\n\n`Bir Daha Deneğiniz`"))
-      if(sayı < message.guild.memberCount) return message.reply(new Discord.MessageEmbed().setTitle('Uyarı !').setColor(renk).setDescription("Ayarlamaya Çalıştığınız Sayaç Sayısını Zaten Sunucu Başarmıştır ❌\n\n`Lütfen Birdaha Deneğiniz`"))
+      if(sayı < message.guild.memberCount) return message.reply(new Discord.MessageEmbed().setTitle('Uyarı !').setColor(renk).setDescription("Ayarlamaya Çalıştığınız Sayaç Sayısını Zaten Sunucu Başarmıştır ❌\n\n`Lütfen Birdaha Deneyiniz`"))
       qdb.set(`sayackanali_${message.guild.id}`, kanal.id)
       qdb.set(`sayachedef_${message.guild.id}`, sayı)
       return message.reply(new Discord.MessageEmbed().setTitle('Uyarı !').setColor(renk).setDescription("Başarıyla Sunucu Sayacı Ayarlanmıştır ✅"))

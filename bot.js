@@ -985,23 +985,25 @@ client.on("message", async msg => {
 
 //SAYAÇ MESAJ  
 client.on("guildMemberAdd", member => {
+var cılı = '#36393f'
 var kanal = qdb.fetch(`sayackanali_${member.guild.id}`)
 if(!kanal) return;
 var hedef = qdb.fetch(`sayachedef_${member.guild.id}`)
 if(!hedef) return;
-client.channels.cache.get(kanal).send(`<a:GiriGif:814802956993298453> \`${member}\` Sunucuya katıldı! Hedefimize ulaşmamıza \`${hedef - member.guild.memberCount}\` kişi kaldı!`)
+client.channels.cache.get(kanal).send(new Discord.MessageEmbed().setColor(cılı).setDescription(`<a:GiriGif:814802956993298453> \`${member}\` Sunucuya katıldı! Hedefimize ulaşmamıza \`${hedef - member.guild.memberCount}\` kişi kaldı!`))
 if(hedef <= member.guild.memberCount){
-  client.channels.cache.get(kanal).send(`<a:konfeti:814802920990179359> Hedefimizi başardık! Sunucumuz \`${hedef}\` kişiye ulaştı! <a:konfeti:814802920990179359>`)
+  client.channels.cache.get(kanal).send(new Discord.MessageEmbed().setColor(cılı).setDescription(`<a:konfeti:814802920990179359> Hedefimizi başardık! Sunucumuz \`${hedef}\` kişiye ulaştı! <a:konfeti:814802920990179359>`))
   qdb.delete(`sayackanali_${member.guild.id}`)
   qdb.delete(`sayachedef_${member.guild.id}`)
 }
 })
 client.on("guildMemberRemove", member => {
+var cılı = '#36393f'
 var kanal = qdb.fetch(`sayackanali_${member.guild.id}`)
 if(!kanal) return;
 var hedef = qdb.fetch(`sayachedef_${member.guild.id}`)
 if(!hedef) return;
-client.channels.cache.get(kanal).send(new Discord.MessageEmbed().setDescription(`<a:cks:885484594143567922> \`${member.user.tag}\` adlı kullanıcı sunucudan ayrıldı hedefe \`${hedef - member.guild.memberCount}\` kişi kaldı!`))
+client.channels.cache.get(kanal).send(new Discord.MessageEmbed().setColor(cılı).setDescription(`<a:cks:885484594143567922> \`${member.user.tag}\` adlı kullanıcı sunucudan ayrıldı hedefe \`${hedef - member.guild.memberCount}\` kişi kaldı!`))
 })
 
 client.login(process.env.sebastian);
