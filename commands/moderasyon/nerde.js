@@ -1,15 +1,17 @@
 const { MessageEmbed } = require("discord.js");
+const Discord = require('discord.js');
 const config = require("../../config");
 
 exports.run = async(client, message, args) => {
+    var renk = '#36393f'
     let embed = new MessageEmbed().setColor('2F3136').setTimestamp().setAuthor(message.author.tag, message.author.avatarURL({ dynamic: true }))
 
    
 
     let member = message.mentions.members.first() || message.guild.members.cache.get(args[0])
     let user = message.guild.member(member)
-    if (!user) return message.reply('Bir kullanıcı belirt')
-    if (!user.voice.channel) return message.reply('Bu kullanıcı ses kanalında değil')
+    if (!user) return message.reply(new Discord.MessageEmbed().setColor(renk).setTitle('Bir kullanıcı belirt'))
+    if (!user.voice.channel) return message.reply(new Discord.MessageEmbed().setColor(renk).setTitle('Bu kullanıcı ses kanalında değil'))
 
     let kanal = user.voice.channel
     let mik = user.voice.selfMute ? "\`Kapalı\`" : "\`Açık\`"
@@ -24,7 +26,7 @@ Mikrofonu: ${mik}
 Kulaklığı: ${kulak}
 Yayın Bilgisi: ${yayın}
 Kanal Bilgisi: \`${kanaldakiler}/${kanalinfo}\`
-`)).then(m => m.delete({ timeout: 7000 }) && message.delete({ timeout: 7000 }))
+`))
     }
 };
 exports.conf = {
