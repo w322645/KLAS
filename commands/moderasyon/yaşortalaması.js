@@ -15,19 +15,22 @@ let yas19 = message.guild.members.cache.filter(x=> x.displayName.includes("19"))
 let yas20 = message.guild.members.cache.filter(x=> x.displayName.includes("20")).size;
 let yas16 = message.guild.members.cache.filter(x=> x.displayName.includes("16")).size;
 let yas17 = message.guild.members.cache.filter(x=> x.displayName.includes("17")).size;
+let yas21 = message.guild.members.cache.filter(x=> x.displayName.includes("21")).size;
+let yas22 = message.guild.members.cache.filter(x=> x.displayName.includes("22")).size;
+let yas23 = message.guild.members.cache.filter(x=> x.displayName.includes("23")).size;
+let yas24 = message.guild.members.cache.filter(x=> x.displayName.includes("24")).size;
+let yas25 = message.guild.members.cache.filter(x=> x.displayName.includes("25")).size;
+let yas26 = message.guild.members.cache.filter(x=> x.displayName.includes("26")).size;
+let yas27 = message.guild.members.cache.filter(x=> x.displayName.includes("27")).size;
+let yas28 = message.guild.members.cache.filter(x=> x.displayName.includes("28")).size;
+let yas29 = message.guild.members.cache.filter(x=> x.displayName.includes("29")).size;
+let yas30 = message.guild.members.cache.filter(x=> x.displayName.includes("30")).size;
 
 
 let embed = new Discord.MessageEmbed()
-.setColor('RANDOM')
+.setColor('#36393f')
 .setAuthor(message.guild.name, message.guild.iconURL({ dymaic: true}))
 .setDescription(`Sunucudaki Yaş Ortalaması;
-
-
-
-
-
-
-
 \`8 Yaş:\` **${yas8}** Kişi
 \`9 Yaş:\` **${yas9}** Kişi
 \`10 Yaş:\` **${yas10}** Kişi
@@ -40,7 +43,18 @@ let embed = new Discord.MessageEmbed()
 \`17 Yaş:\` **${yas17}** Kişi
 \`18 Yaş:\` **${yas18}** Kişi
 \`19 Yaş:\` **${yas19}** Kişi
-\`20 Yaş:\` **${yas20}** Kişi`)
+\`20 Yaş:\` **${yas20}** Kişi
+\`21 Yaş:\` **${yas21}** Kişi
+\`22 Yaş:\` **${yas22}** Kişi
+\`23 Yaş:\` **${yas23}** Kişi
+\`24 Yaş:\` **${yas24}** Kişi
+\`25 Yaş:\` **${yas25}** Kişi
+\`26 Yaş:\` **${yas26}** Kişi
+\`27 Yaş:\` **${yas27}** Kişi
+\`28 Yaş:\` **${yas28}** Kişi
+\`29 Yaş:\` **${yas29}** Kişi
+\`30 Yaş:\` **${yas30}** Kişi
+`)
 .setThumbnail(message.guild.iconURL({ dymaic: true}))
 message.channel.send(embed)
 };
