@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const { stripIndents } = require('common-tags');
-const { randomRange, verify } = require('../util/Util.js');
+const { randomRange, verify } = require('../../util/util.js');
 
 exports.run = async (client, message, args) => {   
   this.fighting = new Set();
@@ -41,11 +41,11 @@ exports.run = async (client, message, args) => {
 				const user = userTurn ? message.author : opponent;
 				let choice;
 				if (!opponent.bot || (opponent.bot && userTurn)) {
-					await message.channel.send(stripIndents`
+					await message.channel.send(new Discord.MessageEmbed().setDescription(stripIndents`
 						${user}, ne yapmak istersin? \`saldır\`, \`savun\`, \`ultra güç\`, veya \`kaç\`?
 						**${message.author.username}**: ${userHP} :heartpulse:
 						**${opponent.username}**: ${oppoHP} :heartpulse:
-					`);
+					`));
 					const filter = res =>
 						res.author.id === user.id && ['saldır', 'savun', 'ultra güç', 'kaç'].includes(res.content.toLowerCase());
 					const turn = await message.channel.awaitMessages(filter, {
@@ -53,7 +53,7 @@ exports.run = async (client, message, args) => {
 						time: 30000
 					});
 					if (!turn.size) {
-						await message.reply(`Üzgünüm ama, süre doldu!`);
+						await message.reply(new Discord.MessageEmbed().setDescription(`Üzgünüm ama, süre doldu!`));
 						reset();
 						continue;
 					}
@@ -64,34 +64,34 @@ exports.run = async (client, message, args) => {
 				}
 				if (choice === 'saldır') {
 					const damage = Math.floor(Math.random() * (guard ? 10 : 100)) + 1;
-					await message.channel.send(`${user}, **${damage}** hasar vurdu!`);
+					await message.channel.send(new Discord.MessageEmbed().setDescription(`${user}, **${damage}** hasar vurdu!`));
 					dealDamage(damage);
 					reset();
 				} else if (choice === 'savun') {
-					await message.channel.send(`${user}, kendisini süper kalkan ile savundu!`);
+					await message.channel.send(new Discord.MessageEmbed().setDescription(`${user}, kendisini süper kalkan ile savundu!`));
 					guard = true;
 					reset(false);
 				} else if (choice === 'ultra güç') {
 					const miss = Math.floor(Math.random() * 4);
 					if (!miss) {
 						const damage = randomRange(100, guard ? 150 : 300);
-						await message.channel.send(`${user}, Çoook uzak galaksilerden gelen ultra sonik enerjiyi yeterki miktarda topladın ve **${damage}** hasar vurdun!!`);
+						await message.channel.send(new Discord.MessageEmbed().setDescription(`${user}, Çoook uzak galaksilerden gelen ultra sonik enerjiyi yeterki miktarda topladın ve **${damage}** hasar vurdun!!`));
 						dealDamage(damage);
 					} else {
-						await message.channel.send(`${user}, Çoook uzak galaksilerden gelen ultra sonik enerjiyi yeterli miktarda toplayamadığın için ulta güç kullanamadın!`);
+						await message.channel.send(new Discord.MessageEmbed().setDescription(`${user}, Çoook uzak galaksilerden gelen ultra sonik enerjiyi yeterli miktarda toplayamadığın için ulta güç kullanamadın!`));
 					}
 					reset();
 				} else if (choice === 'kaç') {
-					await message.channel.send(`${user}, kaçtı! Korkak!`);
+					await message.channel.send(new Discord.MessageEmbed().setDescription(`${user}, kaçtı! Korkak!`));
 					forfeit();
 					break;
 				} else {
-					await message.reply('Ne yapmak istediğini anlamadım.');
+					await message.reply(new Discord.MessageEmbed().setDescription('Ne yapmak istediğini anlamadım.'));
 				}
 			}
 			this.fighting.delete(message.channel.id);
             const winner = userHP > oppoHP ? message.author : opponent;
-			return message.channel.send(`Oyun bitti! Tebrikler, **${winner}** kazandı! \n**${message.author.username}**: ${userHP} :heartpulse: \n**${opponent.username}**: ${oppoHP} :heartpulse:`);
+			return message.channel.send(new Discord.MessageEmbed().setDescription(`Oyun bitti! Tebrikler, **${winner}** kazandı! \n**${message.author.username}**: ${userHP} :heartpulse: \n**${opponent.username}**: ${oppoHP} :heartpulse:`));
 		} catch (err) {
 			this.fighting.delete(message.channel.id);
 			throw err;
