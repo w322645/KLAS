@@ -62,7 +62,8 @@
     "discord-buttons": "^4.0.0",
     "moment-timezone": "^0.5.33",
     "node-google-translate-skidz": "^1.1.2",
-    "cowsay": "^1.5.0"
+    "cowsay": "^1.5.0",
+    "hastebin-gen": "^2.0.5"
   },
   "engines": {
     "node": "12.x"
