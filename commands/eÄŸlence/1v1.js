@@ -38,14 +38,14 @@ exports.run = async (client, message, args) => {
 				else oppoHP = 0;
 			};
 			while (userHP > 0 && oppoHP > 0) { // eslint-disable-line no-unmodified-loop-condition
-				const user = userTurn ? message.author : opponent;
-				let choice;
-				if (!opponent.bot || (opponent.bot && userTurn)) {
-					await message.channel.send(new Discord.MessageEmbed().setDescription(stripIndents`
-						${user}, ne yapmak istersin? \`saldır\`, \`savun\`, \`ultra güç\`, veya \`kaç\`?
-						**${message.author.username}**: ${userHP} :heartpulse:
-						**${opponent.username}**: ${oppoHP} :heartpulse:
-					`));
+		const user = userTurn ? message.author : opponent;
+let choice;
+if (!opponent.bot || (opponent.bot && userTurn)) {
+    await message.channel.send(new Discord.MessageEmbed().setDescription(stripIndents`
+        ${user}, ne yapmak istersin? \`saldır\`, \`savun\`, \`ultra güç\`, veya \`kaç\`?
+        **${message.author.username}**: \`${userHP}\` :heartpulse:
+        **${opponent.username}**: \`${oppoHP}\` :heartpulse:
+    `));
 					const filter = res =>
 						res.author.id === user.id && ['saldır', 'savun', 'ultra güç', 'kaç'].includes(res.content.toLowerCase());
 					const turn = await message.channel.awaitMessages(filter, {
