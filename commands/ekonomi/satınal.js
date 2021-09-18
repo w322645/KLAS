@@ -2,7 +2,7 @@ const discord = require('discord.js')
 const { Database } =  require('nukleon')
 const  db  = new Database("plasmic.json");
 exports.run = async(client, message, args) => {
-    if(!args[0]) return message.channel.send(`Lütfen bir eşya idi belirtin! \n \n Eşya idlerini bilmiyorsanız !market komutunu kullanın`)
+    if(!args[0]) return message.channel.send(`Lütfen bir eşya idi belirtin! \n \n Eşya idlerini bilmiyorsanız ?market komutunu kullanın`)
     db.add(`bankakapasite_${message.author.id}`, 30)
 if(args[0] == "olta") {
     let para = db.fetch(`para_${message.author.id}`)

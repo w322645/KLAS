@@ -3,14 +3,7 @@ const { Database } =  require('nukleon')
 const  db  = new Database("plasmic.json");
 const bt = require('best-tools');
 exports.run = async(client, message, args) => {
-     var e = db.fetch(`prefix_${message.guild.id}`)
-  if(e){
-    var p = e
-  }
-  if(!e){
-    var p = "?"
-  }
-    if(!args[0]) return message.channel.send(`Lütfen bir eşya idi belirtin! \n \n Eşya idlerini bilmiyorsanız {p}market komutunu kullanın`)
+    if(!args[0]) return message.channel.send(`Lütfen bir eşya idi belirtin! \n \n Eşya idlerini bilmiyorsanız ?market komutunu kullanın`)
 
 if(args[0] == "silah") {
     let silah = db.fetch(`silah_${message.author.id}`)
