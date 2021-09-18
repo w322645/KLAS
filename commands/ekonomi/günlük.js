@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const Database = require("plasma-db");
-const db = new Database("./ekonomis.json"); 
+const db = new Database("ekonomis.json"); 
 const talkedRecently = new Set();
 
 exports.run = async(client, message, args) => {

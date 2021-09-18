@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const Database = require("plasma-db");
-const db = new Database("./ekonomi.json"); 
+const db = new Database("ekonomi.json"); 
 const slots = ['1','10','5','100','5000','3000','2000','1000','360','2670','5100','1670','1690']
 exports.run = function(client, message) {
 
