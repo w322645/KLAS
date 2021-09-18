@@ -4,7 +4,7 @@ const  db  = new Database("plasmic.json");
 const bt = require('best-tools');
 exports.run = async(client, message, args) => {
   db.add(`bankakapasite_${message.author.id}`, 50)
-let kalan = bt.hesapla(``)
+let kalan = bt.hesapla("")
 let para = db.fetch(`para_${message.author.id}`)
 if(para == para) {var enginar = para}
 if(para == undefined) {var enginar = "0"}

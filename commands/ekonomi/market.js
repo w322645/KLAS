@@ -1,5 +1,5 @@
 const discord = require('discord.js')
-const qdb = require('quick.db')
+const db = require('quick.db')
 exports.run = async(client, message , args) => {
 let engin = new discord.MessageEmbed()
 .setTitle('Market menüsü')

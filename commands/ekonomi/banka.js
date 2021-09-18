@@ -25,7 +25,7 @@ exports.run = async(client, message, args) => {
     .setTitle(`:moneybag:  ${user.username} kişisinin bankası :moneybag:`)
 .setDescription(`:dollar:  Cebindeki para: ${enginar} \n \n :credit_card:  Bankandaki para: ${engin}/${kapasitevar}`)
 .setTimestamp()
-.setFooter('Powered by plasmic code - Enginar')
+.setFooter('EFDA')
 return message.channel.send(embed)
 }
 exports.conf = {
