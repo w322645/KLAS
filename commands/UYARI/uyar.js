@@ -1,6 +1,16 @@
 const Discord = require('discord.js');
 const db = require('quick.db');
+const qdb = require('quick.db');
 exports.run = async(client, message, args) => {
+  var uyarı = db.fetch(`uyarisicil_${message.author.id}`)
+if(!uyarı){
+    var uyarı = "0"
+}
+  var kanal = await db.fetch(`uyarilog_${message.guild.id}`);
+  var kanal = message.guild.channels.cache.find(
+    channel => channel.id === kanal
+  )
+  
     var e = db.fetch(`prefix_${message.guild.id}`)
     if(e){
       var p = e
@@ -8,6 +18,7 @@ exports.run = async(client, message, args) => {
     if(!e){
       var p = "?"
     }
+
 var yetkili = db.fetch(`uyariyetkili_${message.guild.id}`)
 if(!yetkili) return message.channel.send(new Discord.MessageEmbed().setColor('#36393f').setDescription(`Uyarı yetkilisi rol'ü ayarlanmamış! \n\n**Ayarlamak İçin =** \`${p}uyarı-ayar yetkili @yetkili-rol\` `))
 if(!message.member.roles.cache.has(yetkili)) return message.channel.send(new Discord.MessageEmbed().setColor('#36393f').setDescription(`Bu komutu kullanmak için <@&${yetkili}> rolüne sahip olmalısın!\n\n**Yardım İçin =** \`${p}uyarı-ayar\``))
@@ -18,8 +29,9 @@ if(!sebep) return message.channel.send(new Discord.MessageEmbed().setColor('#363
 db.add(`uyarisicil_${user.id}`, 1)
 db.add(`uyaricezapuani_${user.id}`, 10)
 db.push(`uyarisebep_${user.id}`, `**${message.author.username} => **` + sebep)
-message.guild.member(user).send(new Discord.MessageEmbed().setColor('#36393f').setDescription(`${message.guild.name} sunucusunda ${sebep} sebebiyle uyarıldınız! \n \n Yetkili: ${message.author}`))
-message.channel.send(new Discord.MessageEmbed().setColor('#36393f').setDescription(`${user.username}, ${message.author} tarafından ${sebep} sebebiyle uyarıldı!`))
+message.guild.member(user).send(new Discord.MessageEmbed().setColor('#36393f').setDescription(`${message.guild.name} sunucusunda ${sebep} sebebiyle uyarıldınız! \n  Uyarı Sayınız \`${uyarı}\` \n Yetkili: ${message.author}`))
+message.channel.send(new Discord.MessageEmbed().setColor('#36393f').setDescription(`${user.username}, ${message.author} tarafından ${sebep} sebebiyle uyarıldı! \n Kişinin Uyarı Sayısı \`${uyarı}\``))
+kanal.send(new Discord.MessageEmbed().setColor('#36393f').setDescription(`${user.username}, ${message.author} tarafından ${sebep} sebebiyle uyarıldı!  \n Kişinin Uyarı Sayısı \`${uyarı}\` `))
 };
 exports.conf = {
     aliases: ["uyarı"],
@@ -30,8 +42,3 @@ exports.help = {
     name: "uyar"
 };
 
-//db.push(`sebepler_${message.guild.id}`, sebep)
-
-  //let sebeps = db.fetch(`sebepler_${message.guild.id}`)
-
-//      message.channel.send(sebeps.join("\n"),{split:true})

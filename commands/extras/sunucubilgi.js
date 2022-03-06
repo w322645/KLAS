@@ -12,7 +12,7 @@ function checkDays(date) {
         let serverSize = msg.guild.memberCount;
         let botCount = msg.guild.members.cache.filter(m => m.user.bot).size;
         let humanCount = serverSize - botCount;
-        let verifLevels = ["Yok", "Düşük hesapta e-posta doğrulanmış olmalıdır", "Orta - Discord'a 5 dakikadan daha uzun süre kayıtlı olmalıdır", "Yüksek - (╯ ° □ °） ╯︵ ┻━┻ - sunucunun üyesi 10 dakikadan uzun olmalıdır", "Çok Yüksek - ┻━┻ ミ ヽ (ಠ 益 ಠ) ﾉ 彡 ┻━┻ - doğrulanmış bir telefon numarasına sahip olmalıdır"];
+        let verifLevels = ["Ayarlar Kısmından Bakmanız Daha Sağlıklı Olucaktır"];
 	let region = {
 			"us-central": "Amerika :flag_us:",
 			"us-east": "Doğu Amerika :flag_us:",
@@ -34,13 +34,14 @@ function checkDays(date) {
 
 	}
 
+
 	
-			const yukleniyor = await msg.channel.send(`Sunucu Bilgileri Araştırılıyor`);
+			const yukleniyor = await msg.channel.send(`Sunucu Bilgileri Araştırılıyor Ve Veriler Analiz Ediliyor`);
 
 let sunucu = new Discord.MessageEmbed()
 .setAuthor('Sunucu Bilgisi', msg.guild.iconURL())
 .setThumbnail(msg.guild.iconURL())
-.addField('👑 Sunucu Bilgileri 👑', `**Sunucu İsmi:** ${guild.name} \n**Sunucu ID:** \`${msg.guild.id}\` \n**Sunucu Sahibi:** ${guild.owner} \n**Bulunduğu Bölge:** ${region[msg.guild.region]} \n**Kuruluş Tarihi:** \`${checkDays(msg.guild.createdAt)}\`
+.addField('👑 Sunucu Bilgileri 👑', `**Sunucu İsmi:** ${guild.name} \n**Sunucu ID:** \`${msg.guild.id}\` \n**Sunucu Sahibi:** ${guild.owner}\n**Kuruluş Tarihi:** \`${checkDays(msg.guild.createdAt)}\` \n **Discord Verify Levels:** \`${verifLevels}\`
 `)
 .addField(`👤 Üye Bilgileri 👤 `, `**Toplam Üye:** \`${humanCount}\` \n**Toplam Bot:** \`${botCount}\` \n**Rol Sayısı:** \`${guild.roles.cache.size}\``)
 .addField(`🌏 Kanallar 🌏`, ` **Yazı:** \`${msg.guild.channels.cache.filter(c => c.type === 'text').size}\` \n **Sesli:** \`${msg.guild.channels.cache.filter(c => c.type === 'voice').size}\` \n **Kategori:** \`${msg.guild.channels.cache.filter(c => c.type === 'category').size}\``)

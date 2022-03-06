@@ -33,14 +33,14 @@ exports.run = async (client, message, args) => {
       .setFooter(`Efda Corpation©`);
 
     önerikanalı.send(embed).then(m => {
-      m.react("⬆️");
-      m.react("⬇️");
+      m.react("☑️");
+      m.react("❌");
     });
   }
 
   message.channel.send(new Discord.MessageEmbed().setColor(hengover).setDescription(
     `:white_check_mark: **Öneriniz başarıyla alındı!** \n :pen_ballpoint:  _Önerin ${önerikanalı} kanalına düştü_`
-  ));
+  )).then(x => {x.delete({timeout: 3000})});
 };
 
 exports.conf = {

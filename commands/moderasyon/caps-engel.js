@@ -17,13 +17,16 @@ exports.run = async (client, message, args) => {
 
   if(args[0] === 'aç') {
     db.set(`capslock_${message.guild.id}`, true)
-    message.channel.send(new Discord.MessageEmbed().setDescription("CapsLock Engel Sistemi Başarıyla Aktfileştirildi <a:evet:814802902954016768>\n İyi Sohbetler Dileriz.").setColor(renk))
+    db.set(`caps_${message.guild.id}`,'<:onn:891927243574628382>')
+    message.channel.send(new Discord.MessageEmbed().setDescription("CapsLock Engel Sistemi Başarıyla Aktfileştirildi ✅\n İyi Sohbetler Dileriz.").setColor(renk))
   return
+     if(db.has(`capslock_${message.guild.id}`)) return message.channel.send(new Discord.MessageEmbed().setColor("#36393f").setTitle(`Sistem zaten açık.`))
 }
 
 if (args[0] === 'kapat') {
   db.delete(`capslock_${message.guild.id}`)
-message.channel.send(new Discord.MessageEmbed().setColor(renk).setDescription("CapsLock Engel Sistemi Başarıyla Devre Dışı Bırakıldı <a:hayr:814802919542620211>\n İyi Sohbetler Dileriz"))
+   db.delete(`caps_${message.guild.id}`)
+message.channel.send(new Discord.MessageEmbed().setColor(renk).setDescription("CapsLock Engel Sistemi Başarıyla Devre Dışı Bırakıldı :x:\n İyi Sohbetler Dileriz"))
 return
 }
 

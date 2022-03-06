@@ -11,17 +11,18 @@ exports.run = async (bot, message, args) => {
   if(!e){
     var p = "?"
   }
+
   if (!args[0]) return message.channel.send(new Discord.MessageEmbed().setColor("#36393f").setTitle('Hey Bu Ayarı Kullanabilmek için `aç` yada `kapat` yazmalısın.\n**Örnek** ⬇️').setDescription(`\n\n\`${p}reklam-engel aç\`\n\n\`${p}reklam-engel kapat\``))
   if(!ayarlar.includes(args[0])) return message.channel.send(`Geçerli parametreleri kullanmalısın.\nParametreler: ${ayarlar.join(' - ')}`)
  
   if (args[0] == 'aç') {
     if(db.has(`reklam_${message.guild.id}`)) return message.channel.send(new Discord.MessageEmbed().setColor("#36393f").setTitle(`Sistem zaten açık.`))
-    db.set(`reklam_${message.guild.id}`, 'acik')
+    db.set(`reklam88_${message.guild.id}`, '<:onn:891927243574628382>')
       message.channel.send(new Discord.MessageEmbed().setColor("#36393f").setTitle('Reklam Engel başarıyla açıldı! `Üyeleri Yasakla` yetkisine sahip olanların reklamı engellenmicektir.'))
   }
   if (args[0] == 'kapat') {
         if(!db.has(`reklam_${message.guild.id}`)) return message.channel.send(new Discord.MessageEmbed().setColor("#36393f").setTitle(`Sistem zaten kapalı.`))
-    db.delete(`reklam_${message.guild.id}`)
+    db.delete(`reklam88_${message.guild.id}`)
       message.channel.send(new Discord.MessageEmbed().setColor("#36393f").setTitle('Reklam Engel başarıyla kapatıldı! Artık herkes reklam yapabilir.'))
   }
  
