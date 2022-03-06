@@ -10,8 +10,6 @@ let tarih = new Date().toLocaleString("tr-TR", { timeZone: "Asia/Istanbul" });
 const db = require("quick.db");
 const moment = require("moment");
 const Canvas = require("canvas");
-const disbut = require("discord-buttons");
-disbut(client);
 /////TABLES
 var commandtable = new AsciiTable("EFDA BOT KOMUT MASASI");
 ////

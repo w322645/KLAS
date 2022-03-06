@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const ayarlar = require('../../config');
 const db = require('quick.db');
-const ms = require('ms');
 const Canvas = require('canvas')
     , Font = Canvas.Font
     , path = require('path');

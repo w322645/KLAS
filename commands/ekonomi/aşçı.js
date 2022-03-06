@@ -4,7 +4,6 @@ const ayarlar = require('../../config');
 
 const db = require('quick.db')
 
-const ms = require('ms')
 
 exports.run = async (client, message, args) => {
   

@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
-const chancejs = require('chance');
 const db = require('quick.db')
-const chance = new chancejs();
+
 
 
 

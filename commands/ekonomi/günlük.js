@@ -4,7 +4,6 @@ const ayarlar = require('../../config');
 
 const db = require('quick.db');
 
-const ms = require('ms')
 
 exports.run = async (client, message, args) => {
   
@@ -20,7 +19,7 @@ exports.run = async (client, message, args) => {
 
     if (lastDaily !== null && yavaşmod - (Date.now() - lastDaily) > 0) {
 
-        let timeObj = ms(yavaşmod - (Date.now() - lastDaily));
+        let timeObj = (yavaşmod - (Date.now() - lastDaily));
 
 
 
