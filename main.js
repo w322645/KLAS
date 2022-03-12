@@ -20,4 +20,4 @@ fs.readdir('./commands/', (err, files) => { //serend,a
   });
 })
 
-client.login(config.token)
+client.login(process.env.sebastian)
