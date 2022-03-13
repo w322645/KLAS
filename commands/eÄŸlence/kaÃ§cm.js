@@ -28,7 +28,7 @@ exports.conf = {
   enabled: true,
   guildOnly: false,
   aliases: ["kaçcm", "cmkaç", "kaçcm", "cm-kaç"],
-  permLevel: 4
+  permLevel: 0
 };
 
 exports.help = {
