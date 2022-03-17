@@ -18,7 +18,7 @@ exports.run = (client, msg, args) => {
 
         hastebin(haste, type).then(r => {
             var link = `${r}`
-            msg.channel.send(`:white_check_mark: Tamamdır ben halletim buyur linkin :[Banlananlar](${link})`);
+            msg.channel.send(`:white_check_mark: Aşağıdaki Linkten Banlayanlara Bakarm :[Banlananlar](${link})`);
         }).catch(console.error);
 
     });
@@ -32,7 +32,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'banlistesi',
+  name: 'banlist',
   description: 'Hastebin çevirir.',
   usage: 'hastebin [komut]'
 };
