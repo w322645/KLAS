@@ -1,70 +1,38 @@
-const Discord = require("discord.js");
-const talkedRecently = new Set();
+const hastebin = require('hastebin-gen');
 
-exports.run = async (client, message, args) => {
+exports.run = (client, msg, args) => {
+
+  
+  let guild = msg.channel.guild
+
+    const bans = new Map();
+    msg.guild.fetchBans().then(g => {
+      bans[g.id] = g;
+      let banlist = `${bans[g.id]
+        .map(ge => `\n (${ge.user.tag}) (${ge.user.id})`)
+        .join("\n")}`;
 
 
-  const bans = new Map();
-  message.guild.fetchBans().then(g => {
-    bans[g.id] = g;
-    let banlist = `${bans[g.id]
-      .map(ge => `\n (${ge.user.tag}) (${ge.user.id})`)
-      .join("\n")}`;
-    try {
-      let noembed = new Discord.MessageEmbed()
-        .setColor("#36393f")
-        .setDescription(`Bu Sunucuda Yasaklı Kullanıcı Bulunmuyor.`)
-        .setAuthor(
-          message.guild.name,
-          message.guild.iconURL()
-            ? message.guild.iconURL()
-            : "https://images-ext-2.discord.net/external/hHow2gpD0uyL8WnA8ynAHuPbzm_lE1lNAaxkLqDT0Fs/https/images-ext-1.discord.net/external/rBk_abKMsqAKoATjXbtyqKJt2bTXI_shMEemVpbNtFw/http/www.kalahandi.info/wp-content/uploads/2016/05/sorry-image-not-available.png"
-        )
-        .setFooter(
-          "Bu komutu kullanan kullanıcı " + message.author.tag,
-          message.author.avatarURL()
-        );
-      if (banlist.length === 0) return message.channel.send(noembed);
-      const embed = new Discord.MessageEmbed()
-        .setDescription(banlist)
-        .setAuthor(
-          message.guild.name,
-          message.guild.iconURL()
-            ? message.guild.iconURL()
-            : "https://images-ext-2.discord.net/external/hHow2gpD0uyL8WnA8ynAHuPbzm_lE1lNAaxkLqDT0Fs/https/images-ext-1.discord.net/external/rBk_abKMsqAKoATjXbtyqKJt2bTXI_shMEemVpbNtFw/http/www.kalahandi.info/wp-content/uploads/2016/05/sorry-image-not-available.png"
-        )
-        .setFooter(
-          "Bu komutu kullanan kullanıcı " + message.author.tag,
-          message.author.avatarURL()
-        )
-        .setColor("#36393f");
-      message.channel.send(embed);
-    } catch (err) {
-      const embed = new Discord.MessageEmbed()
-        .addField(
-          `Sunucuda Bulunan Yasaklılar`,
-          "<:no:663378512417128449> Üzgünüm ama sunucunuzda fazla sayıda yasaklı kullanıcı bulunuyor Bu Yüzden gösteremiyorum. Discord buna izin vermiyor."
-        )
-        .setColor("#36393f")
-        .setFooter(
-          "Bu komutu kullanan kullanıcı " + message.author.tag,
-          message.author.avatarURL()
-        )
-        .setTimestamp();
-      message.channel.send(embed);
+	    let haste = (`${guild.name}\n\n\n` + banlist)
+        let type = (bans)
+
+        hastebin(haste, type).then(r => {
+            var link = `${r}`
+            msg.channel.send(`:white_check_mark: Tamamdır ben halletim buyur linkin :[Banlananlar](${link})`);
+        }).catch(console.error);
+
+    });
+
     }
-  });
-};
-
 exports.conf = {
   enabled: true,
-  guildOnly: true,
-  aliases: ["yasak-listesi"],
-  permLevel: 2
+  guildOnly: false,
+  aliases: [],
+  permLevel: 3
 };
 
 exports.help = {
-  name: "banlist",
-  description: "Sunucudaki Yasaklı Kullanıcıları Gösterir.",
-  usage: "banlist"
+  name: 'banlistesi',
+  description: 'Hastebin çevirir.',
+  usage: 'hastebin [komut]'
 };
