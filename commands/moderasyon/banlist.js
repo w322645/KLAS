@@ -1,4 +1,5 @@
 const hastebin = require('hastebin-gen');
+const Discord = require('discord.js');
 
 exports.run = (client, msg, args) => {
 
@@ -18,7 +19,10 @@ exports.run = (client, msg, args) => {
 
         hastebin(haste, type).then(r => {
             var link = `${r}`
-            msg.channel.send(`:white_check_mark: Aşağıdaki Linkten Banlayanlara Bakarm :[Banlananlar](${link})`);
+            msg.channel.send(new Discord.MessageEmbed()
+            .setColor('BLACK')
+            .setImage('https://2.bp.blogspot.com/-F912aH8xass/W6dX7tiSKXI/AAAAAAAAABc/ULYyfAaGSZYUibjoL2-LFmWcobyYipQqwCLcBGAs/s1600/banned-stamp-png.png')
+            .setDescription(`Aşağıdaki Linkten Banlayanlara Bakabilirsiniz \n\n\n[${guild.name} Banlanan Üyeler](${link})`));
         }).catch(console.error);
 
     });
