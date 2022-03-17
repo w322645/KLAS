@@ -10,8 +10,8 @@ exports.run = (client, msg, args) => {
         .join("\n")}`;
 
 
-	    let haste = (bans)
-        let type = (banlist)
+	    let haste = (banlist)
+        let type = (bans)
 
         hastebin(haste, type).then(r => {
             var link = `${r}`
