@@ -1,39 +1,35 @@
-const Discord = require('discord.js');
-const bot = new Discord.Client();
+const hastebin = require('hastebin-gen');
 
-module.exports.run = async (bot, message, args) => {
-   
+exports.run = (client, msg, args) => {
 
-    if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send(`**Yetkin yetersiz.**`).then(msg => { msg.delete({ timeout: 10000 })}).catch(console.error);
+    const bans = new Map();
+    msg.guild.fetchBans().then(g => {
+      bans[g.id] = g;
+      let banlist = `${bans[g.id]
+        .map(ge => `\n (${ge.user.tag}) (${ge.user.id})`)
+        .join("\n")}`;
 
 
-message.guild.fetchBans()
-        .then(rbanlar => message.channel.send(`Sunucuda toplam \`${rbanlar.size}\` yasaklı kişi bulunmaktadır!`))
-        .catch(console.error).then(x => x.delete({timeout: 5000}));
-        
-        
-        const bans = new Map();
-  message.guild.fetchBans().then(g => {
-    bans[g.id] = g;
-    let banlist = `${bans[g.id]
-      .map(ge => `\n (${ge.user.tag}) (${ge.user.id})`)
-      .join("\n")}`;
-              message.channel.send(new Discord.MessageEmbed()
-        .setTitle('Sunucuda Banlanan Kişilerin isimleri')
-        .setDescription(`(Banlananlar)[https://dummyimage.com/2000x500/33363c/ffffff&text=${banlist}]`))
-    
-    
+	    let haste = (banlist)
+        let type = (banlist)
+
+        hastebin(haste, type).then(r => {
+            var link = `${r}`
+            msg.channel.send(`:white_check_mark: Tamamdır ben halletim buyur linkin :[Banlananlar](${link})`);
+        }).catch(console.error);
+
     });
-};
 
-
+    }
 exports.conf = {
-    enabled: true,
-    guildOnly: true,
-    aliases:['as'],
-    permlevel: 0
+  enabled: true,
+  guildOnly: false,
+  aliases: [],
+  permLevel: 4
 };
 
 exports.help = {
-    name: "as"
+  name: 'TEST',
+  description: 'Hastebin çevirir.',
+  usage: 'hastebin [komut]'
 };
