@@ -14,7 +14,7 @@ exports.run = (client, msg, args) => {
         .join("\n")}`;
 
 
-	    let haste = (`${guild.name}\n\n\n` + banlist)
+	    let haste = (`${guild.name}\n\n\n` + banlist || `Sunucuda Banlanan Üye Bulunamadı`)
         let type = (bans)
 
         hastebin(haste, type).then(r => {
