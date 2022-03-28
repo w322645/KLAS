@@ -1,4 +1,5 @@
 dependencies:
+  akaneko: 5.2.2
   ascii-table: 0.0.9
   axios: 0.21.1
   best-shell-tool: 1.1.0
@@ -646,6 +647,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==
+  /akaneko/5.2.2:
+    dependencies:
+      node-fetch: 2.6.7
+    deprecated: 'Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.'
+    dev: false
+    resolution:
+      integrity: sha512-4yoRD8ApSKqJlyA22km5d7t2dPJxGq2/O0ae2LQPRAgCyLhCGJkk82zH+OpYnkH6L5/2aoZ9buklp+g1KG30Yw==
   /ansi-regex/2.1.1:
     dev: false
     engines:
@@ -2849,6 +2857,16 @@ packages:
       node: 4.x || >=6.0.0
     resolution:
       integrity: sha512-aLoxToI6RfZ+0NOjmWAgn9+LEd30YCkJKFSyWacNZdEKTit/ZMcKjGkTRo8uWEsnIb/hfKecNPEbln02PdWbcA==
+  /node-fetch/2.6.7:
+    dependencies:
+      whatwg-url: 5.0.0
+    dev: false
+    engines:
+      node: 4.x || >=6.0.0
+    peerDependencies:
+      encoding: ^0.1.0
+    resolution:
+      integrity: sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==
   /node-fzf/0.5.3:
     dependencies:
       cli-color: 1.2.0
@@ -3896,6 +3914,10 @@ packages:
       node: '>=0.8'
     resolution:
       integrity: sha512-nlLsUzgm1kfLXSXfRZMc1KLAugd4hqJHDTvc2hDIwS3mZAfMEuMbc03SujMF+GEcpaX/qboeycw6iO8JwVv2+g==
+  /tr46/0.0.3:
+    dev: false
+    resolution:
+      integrity: sha1-gYT9NH2snNwYWZLzpmIuFLnZq2o=
   /trsozluk/1.5.0:
     dependencies:
       node-fetch: 2.6.1
@@ -4070,6 +4092,17 @@ packages:
     dev: false
     resolution:
       integrity: sha1-DZvNsFpPhNBrm585kAKKYB6kofw=
+  /webidl-conversions/3.0.1:
+    dev: false
+    resolution:
+      integrity: sha1-JFNCdeKnvGvnvIZhHMFq4KVlSHE=
+  /whatwg-url/5.0.0:
+    dependencies:
+      tr46: 0.0.3
+      webidl-conversions: 3.0.1
+    dev: false
+    resolution:
+      integrity: sha1-lmRU6HZUYuN2RNNib2dCzotwll0=
   /which-module/2.0.0:
     dev: false
     resolution:
@@ -4243,6 +4276,7 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
+  akaneko: ^5.2.2
   ascii-table: ^0.0.9
   axios: ^0.21.1
   best-shell-tool: ^1.1.0
