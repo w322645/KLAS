@@ -53,7 +53,7 @@ var renk = '0x36393E'
         .setColor(renk)
         .setTitle(`${guild.name} **Sunucusundan Banlandınız !!**`)
         .setTimestamp()
-        .setDescription(sebep);
+        .setDescription(`\`\`\`\n${sebep}\n\`\`\`\n`);
          user.send(embeds);
           
           let embed = new Discord.MessageEmbed()
