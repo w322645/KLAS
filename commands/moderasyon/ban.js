@@ -44,7 +44,13 @@ exports.run = async (client, message, args) => {
         const tamam = (reaction, user) =>
           reaction.emoji.name == "✅" && user.id == message.author.id;
         const tamam2 = m.createReactionCollector(tamam);
-
+        const embed = new Discord.MessageEmbed()
+        .setColor('RANDOM')
+        .setTitle(`**Huhu orda mısın bir mesajın var ^^ **`)
+        .setTimestamp()
+        .setDescription(sebep);
+        return user.send(embed);
+      
         tamam2.on("collect", async r => {
           message.guild.members.cache.get(user.id).ban({
             reason: `${sebep}`
