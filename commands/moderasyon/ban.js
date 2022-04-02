@@ -2,7 +2,8 @@ const Discord = require("discord.js");
 const db = require("quick.db");
   const talkedRecently = new Set();
 exports.run = async (client, message, args) => {
-
+var renk = '0x36393E'
+  let guild = message.channel.guild
   let rol = db.fetch(`banrol_${message.guild.id}`);
   if (
     !message.member.roles.cache.has(rol) &&
@@ -44,19 +45,19 @@ exports.run = async (client, message, args) => {
         const tamam = (reaction, user) =>
           reaction.emoji.name == "✅" && user.id == message.author.id;
         const tamam2 = m.createReactionCollector(tamam);
-        const embed = new Discord.MessageEmbed()
-        .setColor('RANDOM')
-        .setTitle(`**Huhu orda mısın bir mesajın var ^^ **`)
-        .setTimestamp()
-        .setDescription(sebep);
-        return user.send(embed);
-      
         tamam2.on("collect", async r => {
           message.guild.members.cache.get(user.id).ban({
             reason: `${sebep}`
           });
+        let embeds = new Discord.MessageEmbed()
+        .setColor(renk)
+        .setTitle(`${guild.name} **Sunucusundan Banlandınız !!**`)
+        .setTimestamp()
+        .setDescription(sebep);
+         user.send(embeds);
+          
           let embed = new Discord.MessageEmbed()
-            .setColor("0x36393E")
+            .setColor(renk)
             .setTitle("<a:4889_Banned:814581728772882443> Kişi Banlandı <a:4889_Banned:814581728772882443>")
             .addField("Yetkili", `🛡️__${message.author.tag}__🛡️`)
             .addField("Banlanan kişi", user)
@@ -68,6 +69,7 @@ exports.run = async (client, message, args) => {
               "https://media.giphy.com/media/Rp0U1kTu2gzrEowbJL/giphy.gif"
             );
           client.channels.cache.get(banlog).send(embed);
+          
         });
       });
       await m.react("❌").then(r => {
