@@ -11,8 +11,7 @@ const db = require("quick.db");
 const moment = require("moment");
 const Canvas = require("canvas");
 const disbut = require("discord-buttons");
-const express = require('express');
-const http = require('http')
+
 disbut(client);
 /////TABLES
 var commandtable = new AsciiTable("EFDA BOT KOMUT MASASI");
