@@ -10,7 +10,7 @@ exports.run = async (client, message, args) => {
             "authorization": "apikey 0m0xUjMVjesqShG4z4W4UV:2R4cNsmr9fHjM0hqldYmCu"
         }
     }).then(res => {
-        const messageEmbed = new Discord.MessageEmbed().setTıtle('EFDA ORUÇ TUTUYOR').setColor('YELLOW').setImage('https://cdn.pixabay.com/photo/2019/07/15/09/17/mosque-4338926_1280.png').setDescription(`
+        const messageEmbed = new Discord.MessageEmbed().setTitle('EFDA ORUÇ TUTUYOR').setColor('YELLOW').setImage('https://cdn.pixabay.com/photo/2019/07/15/09/17/mosque-4338926_1280.png').setDescription(`
            > **${city}** şehri için iftar saati **${res.data.result[0].time}.**
            \`\`\`Kalan Süre: ${res.data.result[0].hour} ${res.data.result[0].min}\`\`\`
         `);
