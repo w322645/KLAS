@@ -1205,15 +1205,14 @@ const os =  require('os')
    client.on("ready", () => {
     setInterval(function() {
 
-      var images = ["https://images-ext-1.discordapp.net/external/MqVd4boH95HeGhb0VL0Xqm3dWJZ1xECGGofiWWdPMTo/%3Fv%3D1621792931950/https/cdn.glitch.com/478cc1e8-9c56-49a4-b910-3247fb1894aa%252Fyeni2.png?width=960&height=123", "https://media.discordapp.net/attachments/806311530211573781/854116022226255912/the_beast_by_marquisamon_dekpfob-fullview.png?width=960&height=540", "https://media.discordapp.net/attachments/806311530211573781/854109290667573288/masaustu_efda.png?width=960&height=540", "https://media.discordapp.net/attachments/806311530211573781/854109153723285544/googlessss.png?width=960&height=540", "https://media.discordapp.net/attachments/806311530211573781/854109083640135720/asdasdasd.png?width=960&height=540","https://media.discordapp.net/attachments/806311530211573781/854109070629273610/asda2wd2.png?width=960&height=540" ];
-var image = Math.floor(Math.random() * images.length);
+
 
 var cılı = '#36393f'
 
     const uptime = moment.duration(client.uptime).format(" D [gün], H [saat], m [dakika], s [saniye]");
   const embed = new Discord.MessageEmbed()
-  .setTitle(`Covid-19`)
-  .setImage(+images[image])
+  .setTitle(`EFDA İSTATİSTLİK`)
+  .setImage('https://cdn.glitch.com/3f7b0028-f947-4f5a-b2a6-d90ab4c59568%2Ff848d838-7a14-46ad-8f1e-6846f6fe407a.image.png?v=1614681524708')
   .setColor(cılı)
   .setDescription(`
   **Developer:** W32
